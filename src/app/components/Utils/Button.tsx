@@ -1,11 +1,18 @@
 import React from "react";
 
+type AnchorButtonProps = {
+  href: string;
+  text: string;
+  fadeUpAnimation: (delay: number) => object;
+  isAccent?: boolean;
+};
+
 export const AnchorButton = ({
   href,
   text,
   fadeUpAnimation,
   isAccent = false,
-}) => {
+}: AnchorButtonProps) => {
   return (
     <a
       href={href}
