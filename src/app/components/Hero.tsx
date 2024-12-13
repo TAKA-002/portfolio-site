@@ -12,12 +12,20 @@ const Hero = () => {
         </p>
 
         <div className="flex gap-4 mt-8">
-          <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white hover:shadow-sm rounded-lg transition-all duration-300">
-            View Project
-          </button>
-          <button className="px-6 py-3 border border-gray-200 hover:border-gray-300 hover:bg-gray-50 hover:shadow-sm rounded-lg transition-all duration-300">
+          <a
+            href="#projects"
+            role="button"
+            className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white hover:shadow-sm rounded-lg transition-all duration-300"
+          >
+            View Projects
+          </a>
+          <a
+            href="#skills"
+            role="button"
+            className="px-6 py-3 border border-gray-200 hover:border-gray-300 hover:bg-gray-50 hover:shadow-sm rounded-lg transition-all duration-300"
+          >
             View Skills
-          </button>
+          </a>
         </div>
       </div>
     </section>
