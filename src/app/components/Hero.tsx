@@ -1,7 +1,8 @@
 import React from "react";
+import { AnchorButton } from "./Utils/Button";
 
 const Hero = () => {
-  const fadeupAnimation = (delay = 0) => {
+  const fadeUpAnimation = (delay = 0) => {
     return {
       animation: `fade-up 1s ease-out ${delay}s`, // 使用するキーフレームと挙動
       opacity: 0, // アニメーション発火前の初期表示
@@ -16,7 +17,7 @@ const Hero = () => {
           className="leading-tight font-bold"
           style={{
             fontSize: "clamp(2rem, 5vw, 3rem)",
-            ...fadeupAnimation(),
+            ...fadeUpAnimation(),
           }}
         >
           Hi, I'm Takayuki Miura.
@@ -25,29 +26,24 @@ const Hero = () => {
           className="mt-4"
           style={{
             fontSize: "clamp(1.125rem, 2vw, 1.25rem)",
-            ...fadeupAnimation(0.2),
+            ...fadeUpAnimation(0.2),
           }}
         >
           Frontend Developer crafting modern web experiences.
         </p>
 
         <div className="flex gap-4 mt-8">
-          <a
+          <AnchorButton
             href="#projects"
-            role="button"
-            className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white hover:shadow-sm rounded-lg transition-all duration-300"
-            style={fadeupAnimation(0.4)}
-          >
-            View Projects
-          </a>
-          <a
+            text="View Projects"
+            fadeUpAnimation={fadeUpAnimation}
+            isAccent
+          />
+          <AnchorButton
             href="#skills"
-            role="button"
-            className="px-6 py-3 border border-gray-200 hover:border-gray-300 hover:bg-gray-50 hover:shadow-sm rounded-lg transition-all duration-300"
-            style={fadeupAnimation(0.4)}
-          >
-            View Skills
-          </a>
+            text="View Skills"
+            fadeUpAnimation={fadeUpAnimation}
+          />
         </div>
       </div>
     </section>
