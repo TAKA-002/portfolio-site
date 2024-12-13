@@ -1,9 +1,9 @@
 import React from "react";
 
 const Hero = () => {
-  const fadeupAnimation = () => {
+  const fadeupAnimation = (delay = 0) => {
     return {
-      animation: "fade-up 1s ease-out", // 使用するキーフレームと挙動
+      animation: `fade-up 1s ease-out ${delay}s`, // 使用するキーフレームと挙動
       opacity: 0, // アニメーション発火前の初期表示
       animationFillMode: "forwards", // アニメーション終了時の状態のままにする
     };
@@ -25,7 +25,7 @@ const Hero = () => {
           className="mt-4"
           style={{
             fontSize: "clamp(1.125rem, 2vw, 1.25rem)",
-            ...fadeupAnimation(),
+            ...fadeupAnimation(0.2),
           }}
         >
           Frontend Developer crafting modern web experiences.
@@ -36,7 +36,7 @@ const Hero = () => {
             href="#projects"
             role="button"
             className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white hover:shadow-sm rounded-lg transition-all duration-300"
-            style={fadeupAnimation()}
+            style={fadeupAnimation(0.4)}
           >
             View Projects
           </a>
@@ -44,7 +44,7 @@ const Hero = () => {
             href="#skills"
             role="button"
             className="px-6 py-3 border border-gray-200 hover:border-gray-300 hover:bg-gray-50 hover:shadow-sm rounded-lg transition-all duration-300"
-            style={fadeupAnimation()}
+            style={fadeupAnimation(0.4)}
           >
             View Skills
           </a>
