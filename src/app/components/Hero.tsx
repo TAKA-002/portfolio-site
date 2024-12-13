@@ -4,10 +4,16 @@ const Hero = () => {
   return (
     <section className="pt-32 pb-24 max-w-6xl mx-auto px-6">
       <div className="max-w-2xl">
-        <h1 className="text-5xl leading-tight font-bold">
+        <h1
+          className="leading-tight font-bold"
+          style={{ fontSize: "clamp(2rem, 5vw, 3rem)" }}
+        >
           Hi, I'm Takayuki Miura.
         </h1>
-        <p className="mt-4 text-xl/loose">
+        <p
+          className="mt-4"
+          style={{ fontSize: "clamp(1.125rem, 2vw, 1.25rem)" }}
+        >
           Frontend Developer crafting modern web experiences.
         </p>
 
