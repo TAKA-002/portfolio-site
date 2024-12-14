@@ -5,7 +5,7 @@
       "title": "【キャンペーンLP】マシンピラティス専門スタジオ BDC ピラティス",
       "description": "A clean and minimal web application for tracking daily tasks and managing priorities.",
       "tags": ["Webpack", "EJS", "SCSS"],
-      "image": "/portfolio-site/images/tmb/tmb_bdcpilates.avif",
+      "image": "/images/tmb/tmb_bdcpilates.avif",
       "sourceUrl": "",
       "pageUrl": "https://bdcpilates.com/for_beginners"
     },
@@ -14,7 +14,7 @@
       "title": "Text Manipulator",
       "description": "A clean and minimal web application for tracking daily tasks and managing priorities.",
       "tags": ["Webpack", "React", "Tailwind", "Electron"],
-      "image": "/portfolio-site/images/tmb/tmb_text-manipulator.avif",
+      "image": "/images/tmb/tmb_text-manipulator.avif",
       "sourceUrl": "https://github.com/TAKA-002/text-manipulator",
       "pageUrl": "https://miu-parts.work/text-manipulator/"
     },
@@ -23,7 +23,7 @@
       "title": "image-creator",
       "description": "A clean and minimal web application for tracking daily tasks and managing priorities.",
       "tags": ["PHP", "JavaScript", "jQuery", "Tailwind"],
-      "image": "/portfolio-site/images/tmb/tmb_image-creator.avif",
+      "image": "/images/tmb/tmb_image-creator.avif",
       "sourceUrl": "https://github.com/TAKA-002/image-creator",
       "pageUrl": ""
     },

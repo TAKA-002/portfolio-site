@@ -2,6 +2,7 @@ import React from "react";
 import { Github, ExternalLink } from "lucide-react";
 import { Project } from "@/app/types/projects";
 import { TAG_COLORS } from "./variables";
+import { getAssetPath } from "../Utils/Process";
 import HeadingLevel3 from "../Utils/HeadingLevel3";
 
 type CardsProps = {
@@ -27,7 +28,7 @@ const Cards = ({ data }: CardsProps) => {
                 <figure className="w-full rounded-xl aspect-video overflow-hidden">
                   <img
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    src={image} // ハードコードされたURLを変数に
+                    src={getAssetPath(image)} // ハードコードされたURLを変数に
                     alt={`${title} project preview`} // 空のalt属性を意味のあるものに
                   />
                 </figure>

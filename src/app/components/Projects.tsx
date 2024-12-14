@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { getAssetPath } from "./Utils/Process";
 import Section from "./Utils/Section";
 import HeadingLevel2 from "./Utils/HeadingLevel2";
 import Cards from "./Projects/Cards";
@@ -16,7 +17,7 @@ const Projects = () => {
 
     async function fetchProjectsData() {
       try {
-        const res = await fetch("/portfolio-site/data/projects.json");
+        const res = await fetch(getAssetPath("/data/projects.json"));
         if (!res.ok) {
           throw new Error("Failed to fetch");
         }
