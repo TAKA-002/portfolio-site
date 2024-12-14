@@ -5,7 +5,7 @@
       "title": "Project One",
       "description": "A clean and minimal web application for tracking daily tasks and managing priorities.",
       "tags": ["React", "Next.js", "Tailwind"],
-      "image": "/api/placeholder/640/360",
+      "image": "https://images.dog.ceo/breeds/terrier-westhighland/n02098286_5234.jpg",
       "sourceUrl": "#",
       "pageUrl": ""
     },
@@ -14,7 +14,7 @@
       "title": "Project two",
       "description": "A clean and minimal web application for tracking daily tasks and managing priorities.",
       "tags": ["React", "Next.js", "Tailwind"],
-      "image": "/api/placeholder/640/360",
+      "image": "https://images.dog.ceo/breeds/hound-blood/n02088466_9576.jpg",
       "sourceUrl": "#",
       "pageUrl": "#"
     },
@@ -23,7 +23,7 @@
       "title": "Project three",
       "description": "A clean and minimal web application for tracking daily tasks and managing priorities.",
       "tags": ["React", "Next.js", "Tailwind"],
-      "image": "/api/placeholder/640/360",
+      "image": "https://images.dog.ceo/breeds/setter-english/n02100735_10201.jpg",
       "sourceUrl": "",
       "pageUrl": "#"
     },
@@ -32,7 +32,7 @@
       "title": "Project four",
       "description": "A clean and minimal web application for tracking daily tasks and managing priorities.",
       "tags": ["React", "Next.js", "Tailwind"],
-      "image": "/api/placeholder/640/360",
+      "image": "https://images.dog.ceo/breeds/terrier-tibetan/n02097474_120.jpg",
       "sourceUrl": "#",
       "pageUrl": "#"
     },
@@ -41,7 +41,7 @@
       "title": "Project five",
       "description": "A clean and minimal web application for tracking daily tasks and managing priorities.",
       "tags": ["React", "Next.js", "Tailwind"],
-      "image": "/api/placeholder/640/360",
+      "image": "https://images.dog.ceo/breeds/dingo/n02115641_2096.jpg",
       "sourceUrl": "#",
       "pageUrl": "#"
     }
