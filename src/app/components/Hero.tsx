@@ -1,5 +1,6 @@
 import React from "react";
 import { AnchorButton } from "./Utils/Button";
+import Section from "./Utils/Section";
 
 const Hero = () => {
   const fadeUpAnimation = (delay = 0) => {
@@ -11,7 +12,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="pt-32 pb-24 max-w-6xl mx-auto px-6">
+    <Section>
       <div className="max-w-2xl">
         <h1
           className="leading-tight font-bold"
@@ -46,7 +47,7 @@ const Hero = () => {
           />
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 
