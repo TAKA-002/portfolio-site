@@ -2,10 +2,24 @@ import React from "react";
 import { Github, ExternalLink } from "lucide-react";
 import { Project } from "@/app/types/projects";
 
+const TAG_COLORS = {
+  React: "bg-cyan-400 text-black",
+  Tailwind: "bg-sky-500 text-white",
+  "Next.js": "bg-black text-white",
+  TypeScript: "bg-blue-600 text-white",
+  JavaScript: "bg-yellow-400 text-black",
+  Node: "bg-green-600 text-white",
+  default: "bg-gray-600 text-white",
+} as const;
+
+const getTagColor = (tag: string) => {
+  return TAG_COLORS[tag] || TAG_COLORS.default;
+};
+
 const Cards = ({ data }) => {
   return (
     <div className="my-20">
-      <ul className="grid grid-cols-projects gap-x-12 gap-y-16">
+      <ul className="grid grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-12 gap-y-8 md:gap-y-16">
         {data.map(
           ({
             id,
@@ -41,7 +55,9 @@ const Cards = ({ data }) => {
                       return (
                         <span
                           key={`${id}-${item}-${index}`}
-                          className="px-4 rounded-xl bg-green-600 text-white"
+                          className={`px-4 py-1 text-sm rounded-2xl ${getTagColor(
+                            item
+                          )}`}
                         >
                           {item}
                         </span>
@@ -49,10 +65,10 @@ const Cards = ({ data }) => {
                     })}
                   </div>
 
-                  <div className="flex flex-row gap-4">
+                  <div className="flex flex-row flex-wrap gap-x-4 gap-y-2">
                     {sourceUrl && (
                       <a
-                        className="flex flex-row gap-2"
+                        className="text-sm md:text-base flex flex-row gap-2 origin-bottom-left hover:text-gray-600 hover:-rotate-6 transition-all"
                         href={sourceUrl}
                         aria-label={`View source code for ${title}`}
                       >
@@ -62,7 +78,7 @@ const Cards = ({ data }) => {
                     )}
                     {pageUrl && (
                       <a
-                        className="flex flex-row gap-2"
+                        className="text-sm md:text-base flex flex-row gap-2 origin-bottom-left hover:text-gray-600 hover:-rotate-6 transition-all"
                         href={pageUrl}
                         aria-label={`Go to page for ${title}`}
                       >
