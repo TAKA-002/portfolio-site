@@ -1,17 +1,8 @@
 import React from "react";
 import { Github, ExternalLink } from "lucide-react";
 import { Project } from "@/app/types/projects";
+import { TAG_COLORS } from "./variables";
 import HeadingLevel3 from "../Utils/HeadingLevel3";
-
-const TAG_COLORS = {
-  React: "bg-cyan-400 text-black",
-  Tailwind: "bg-sky-500 text-white",
-  "Next.js": "bg-black text-white",
-  TypeScript: "bg-blue-600 text-white",
-  JavaScript: "bg-yellow-400 text-black",
-  Node: "bg-green-600 text-white",
-  default: "bg-gray-600 text-white",
-} as const;
 
 const getTagColor = (tag: string) => {
   return TAG_COLORS[tag] || TAG_COLORS.default;
