@@ -29,18 +29,18 @@
     },
     {
       "id": 4,
-      "title": "Project four",
+      "title": "NHK 選挙WEB",
       "description": "A clean and minimal web application for tracking daily tasks and managing priorities.",
-      "tags": ["React", "Next.js", "Tailwind"],
-      "image": "https://images.dog.ceo/breeds/terrier-tibetan/n02097474_120.jpg",
-      "sourceUrl": "#",
-      "pageUrl": "#"
+      "tags": ["Webpack", "JavaScript", "jQuery", "React", "HTML", "EJS", "CSS", "SCSS", "Tailwind"],
+      "image": "http://www.nhk.or.jp/senkyo/images/ogimage.png",
+      "sourceUrl": "",
+      "pageUrl": "https://www.nhk.or.jp/senkyo/"
     },
     {
       "id": 5,
       "title": "Project five",
       "description": "A clean and minimal web application for tracking daily tasks and managing priorities.",
-      "tags": ["React", "Next.js", "Tailwind"],
+      "tags": ["React", "Next", "Tailwind"],
       "image": "https://images.dog.ceo/breeds/dingo/n02115641_2096.jpg",
       "sourceUrl": "#",
       "pageUrl": "#"
