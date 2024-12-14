@@ -8,7 +8,7 @@ import Cards from "./Projects/Cards";
 const Projects = () => {
   const [projectsData, setProjectsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     setIsLoading(true);
@@ -23,8 +23,16 @@ const Projects = () => {
         const { projects } = await res.json();
         setProjectsData(projects);
       } catch (err) {
-        setError(err.message);
-        console.error("Error fetch:", err);
+        // throwでなげられるものは、Errorオブジェクトとは限らない。
+        // だから、catchで受け取るerrは、どんな型がくるかわからない（unknown）
+        // 安全に処理するために、型チェックが必要
+        if (err instanceof Error) {
+          setError(err.message);
+          console.error("Error fetch:", err);
+        } else {
+          setError("unknown error");
+          console.error("Error fetch:", err);
+        }
       } finally {
         setIsLoading(false);
       }
