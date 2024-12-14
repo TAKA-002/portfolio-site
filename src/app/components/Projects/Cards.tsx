@@ -4,24 +4,20 @@ import { Project } from "@/app/types/projects";
 import { TAG_COLORS } from "./variables";
 import HeadingLevel3 from "../Utils/HeadingLevel3";
 
+type CardsProps = {
+  data: Project[];
+};
+
 const getTagColor = (tag: string) => {
   return TAG_COLORS[tag] || TAG_COLORS.default;
 };
 
-const Cards = ({ data }) => {
+const Cards = ({ data }: CardsProps) => {
   return (
     <div className="my-20">
       <ul className="grid grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-12 gap-y-8 md:gap-y-16">
         {data.map(
-          ({
-            id,
-            title,
-            description,
-            tags,
-            image,
-            sourceUrl,
-            pageUrl,
-          }: Project) => {
+          ({ id, title, description, tags, image, sourceUrl, pageUrl }) => {
             return (
               <li
                 id={`projects-${id}`}
