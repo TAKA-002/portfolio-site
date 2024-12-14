@@ -6,23 +6,40 @@ import Cards from "./Projects/Cards";
 
 const Projects = () => {
   const [projectsData, setProjectsData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
+    setIsLoading(true);
+    fetchProjectsData();
+
     async function fetchProjectsData() {
-      const res = await fetch("/data/projects.json");
-      if (res.ok) {
+      try {
+        const res = await fetch("/data/projects.json");
+        if (!res.ok) {
+          throw new Error("Failed to fetch");
+        }
         const { projects } = await res.json();
         setProjectsData(projects);
-      } else throw new Error();
+      } catch (err) {
+        setError(err.message);
+        console.error("Error fetch:", err);
+      } finally {
+        setIsLoading(false);
+      }
     }
-
-    fetchProjectsData();
   }, []);
 
   return (
     <Section anchor="projects">
       <h2 className="font-bold text-3xl">Projects</h2>
-      <Cards data={projectsData} />
+      {isLoading ? (
+        <p>Loading projects...</p>
+      ) : error ? (
+        <p>Error projects section...</p>
+      ) : (
+        <Cards data={projectsData} />
+      )}
     </Section>
   );
 };
