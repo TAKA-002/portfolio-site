@@ -68,8 +68,10 @@ const Cards = ({ data }) => {
                   <div className="flex flex-row flex-wrap gap-x-4 gap-y-2">
                     {sourceUrl && (
                       <a
-                        className="text-sm md:text-base flex flex-row gap-2 origin-bottom-left hover:text-gray-600 hover:-rotate-6 transition-all"
+                        className="text-sm md:text-base flex flex-row gap-2 origin-bottom-left hover:text-gray-600 hover:-rotate-6 hover:scale-105 transition-all"
                         href={sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         aria-label={`View source code for ${title}`}
                       >
                         <Github />
@@ -78,8 +80,10 @@ const Cards = ({ data }) => {
                     )}
                     {pageUrl && (
                       <a
-                        className="text-sm md:text-base flex flex-row gap-2 origin-bottom-left hover:text-gray-600 hover:-rotate-6 transition-all"
+                        className="text-sm md:text-base flex flex-row gap-2 origin-bottom-left hover:text-gray-600 hover:-rotate-6 hover:scale-105 transition-all"
                         href={pageUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         aria-label={`Go to page for ${title}`}
                       >
                         <ExternalLink />
