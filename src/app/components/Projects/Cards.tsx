@@ -1,6 +1,7 @@
 import React from "react";
 import { Github, ExternalLink } from "lucide-react";
 import { Project } from "@/app/types/projects";
+import HeadingLevel3 from "../Utils/HeadingLevel3";
 
 const TAG_COLORS = {
   React: "bg-cyan-400 text-black",
@@ -45,7 +46,7 @@ const Cards = ({ data }) => {
                 </figure>
 
                 <div>
-                  <h3 className="mb-4 text-xl font-semibold">{title}</h3>
+                  <HeadingLevel3 text={title} />
                   <p className="mb-4 leading-normal text-base md:text-lg">
                     {description}
                   </p>
