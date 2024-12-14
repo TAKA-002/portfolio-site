@@ -1,11 +1,13 @@
 import React from "react";
 
-const Section = ({ children, anchor }) => {
+type SectionProps = {
+  children: React.ReactNode;
+  anchor?: string;
+};
+
+const Section = ({ children, anchor = "" }: SectionProps) => {
   return (
-    <section
-      id={anchor ? anchor : ""}
-      className="pt-32 pb-24 max-w-6xl mx-auto px-6"
-    >
+    <section id={anchor} className="pt-32 pb-24 max-w-6xl mx-auto px-6">
       {children}
     </section>
   );

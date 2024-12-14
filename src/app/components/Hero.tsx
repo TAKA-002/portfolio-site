@@ -21,7 +21,7 @@ const Hero = () => {
             ...fadeUpAnimation(),
           }}
         >
-          Hi, I'm Takayuki Miura.
+          Hi, I&apos;m Takayuki Miura.
         </h1>
         <p
           className="mt-4"

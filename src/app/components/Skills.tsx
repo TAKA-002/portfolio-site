@@ -5,6 +5,10 @@ import HeadingLevel3 from "./Utils/HeadingLevel3";
 import { skillsData } from "./Skills/variables";
 import Score from "./Skills/Score";
 
+type ParagraphProps = {
+  text: string;
+};
+
 const Skills = () => {
   return (
     <Section anchor="skills">
@@ -37,7 +41,7 @@ const Skills = () => {
   );
 };
 
-export const Paragraph = ({ text }) => {
+export const Paragraph = ({ text }: ParagraphProps) => {
   return (
     <p className="text-gray-800" style={{ fontSize: "min(3.7vw, 16px)" }}>
       {text}
