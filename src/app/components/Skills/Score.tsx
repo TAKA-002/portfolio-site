@@ -1,6 +1,9 @@
 import React from "react";
 
-const Score = ({ score }) => {
+type ScoreProps = {
+  score: number;
+};
+const Score = ({ score }: ScoreProps) => {
   return (
     <div className="flex items-center gap-1">
       {[...Array(5)].map((_, index) => {
