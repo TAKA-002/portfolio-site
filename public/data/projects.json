@@ -2,30 +2,30 @@
   "projects": [
     {
       "id": 1,
-      "title": "Project One",
+      "title": "【キャンペーンLP】マシンピラティス専門スタジオ BDC ピラティス",
       "description": "A clean and minimal web application for tracking daily tasks and managing priorities.",
-      "tags": ["React", "Next.js", "Tailwind", "HTML"],
-      "image": "https://images.dog.ceo/breeds/terrier-westhighland/n02098286_5234.jpg",
-      "sourceUrl": "#",
-      "pageUrl": ""
+      "tags": ["Webpack", "EJS", "SCSS"],
+      "image": "/images/tmb/tmb_bdcpilates.avif",
+      "sourceUrl": "",
+      "pageUrl": "https://bdcpilates.com/for_beginners"
     },
     {
       "id": 2,
-      "title": "Project two",
+      "title": "Text Manipulator",
       "description": "A clean and minimal web application for tracking daily tasks and managing priorities.",
-      "tags": ["React", "Next.js", "Tailwind", "TypeScript"],
-      "image": "https://images.dog.ceo/breeds/hound-blood/n02088466_9576.jpg",
-      "sourceUrl": "#",
-      "pageUrl": "#"
+      "tags": ["Webpack", "React", "Tailwind", "Electron"],
+      "image": "/images/tmb/tmb_text-manipulator.avif",
+      "sourceUrl": "https://github.com/TAKA-002/text-manipulator",
+      "pageUrl": "https://miu-parts.work/text-manipulator/"
     },
     {
       "id": 3,
-      "title": "Project three",
+      "title": "image-creator",
       "description": "A clean and minimal web application for tracking daily tasks and managing priorities.",
-      "tags": ["React", "Next.js", "Tailwind"],
-      "image": "https://images.dog.ceo/breeds/setter-english/n02100735_10201.jpg",
-      "sourceUrl": "",
-      "pageUrl": "#"
+      "tags": ["PHP", "JavaScript", "jQuery", "Tailwind"],
+      "image": "/images/tmb/tmb_image-creator.avif",
+      "sourceUrl": "https://github.com/TAKA-002/image-creator",
+      "pageUrl": ""
     },
     {
       "id": 4,
