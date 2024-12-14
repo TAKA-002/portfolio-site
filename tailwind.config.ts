@@ -12,6 +12,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      gridTemplateColumns: {
+        'projects': 'repeat(auto-fit, minmax(280px, 1fr))',
+      }
     },
   },
   plugins: [],
