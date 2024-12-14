@@ -1,4 +1,8 @@
-export const TAG_COLORS = {
+interface TAG_COLORS {
+  [key: string]: string;
+}
+
+export const TAG_COLORS: TAG_COLORS = {
   HTML: "bg-[#EB6733] text-white",
   CSS: "bg-[#2877BD] text-white",
   SCSS: "bg-[#C86596] text-white",
