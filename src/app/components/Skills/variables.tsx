@@ -4,7 +4,7 @@ export const skillsData = [
     data: [
       {
         name: "HTML/CSS",
-        score: 5,
+        score: 4,
       },
       {
         name: "JavaScript",
@@ -12,11 +12,11 @@ export const skillsData = [
       },
       {
         name: "TypeScript",
-        score: 1,
+        score: 2,
       },
       {
         name: "React",
-        score: 2,
+        score: 3,
       },
       {
         name: "Next.js",
@@ -29,15 +29,15 @@ export const skillsData = [
     data: [
       {
         name: "Git/GitHub",
-        score: 1,
+        score: 3,
       },
       {
         name: "VS Code",
-        score: 1,
+        score: 3,
       },
       {
         name: "Command Line",
-        score: 1,
+        score: 2,
       },
     ],
   },
