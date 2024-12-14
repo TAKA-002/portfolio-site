@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Section from "./Utils/Section";
-import Heading from "./Utils/Heading";
+import HeadingLevel2 from "./Utils/HeadingLevel2";
 import Cards from "./Projects/Cards";
 
 const Projects = () => {
@@ -33,7 +33,7 @@ const Projects = () => {
 
   return (
     <Section anchor="projects">
-      <Heading text="Projects" />
+      <HeadingLevel2 text="Projects" />
 
       {isLoading ? (
         <p>Loading projects...</p>
