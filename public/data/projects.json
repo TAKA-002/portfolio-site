@@ -1,0 +1,49 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Project One",
+      "description": "A clean and minimal web application for tracking daily tasks and managing priorities.",
+      "tags": ["React", "Next.js", "Tailwind"],
+      "image": "/api/placeholder/640/360",
+      "sourceUrl": "#",
+      "pageUrl": ""
+    },
+    {
+      "id": 2,
+      "title": "Project two",
+      "description": "A clean and minimal web application for tracking daily tasks and managing priorities.",
+      "tags": ["React", "Next.js", "Tailwind"],
+      "image": "/api/placeholder/640/360",
+      "sourceUrl": "#",
+      "pageUrl": "#"
+    },
+    {
+      "id": 3,
+      "title": "Project three",
+      "description": "A clean and minimal web application for tracking daily tasks and managing priorities.",
+      "tags": ["React", "Next.js", "Tailwind"],
+      "image": "/api/placeholder/640/360",
+      "sourceUrl": "",
+      "pageUrl": "#"
+    },
+    {
+      "id": 4,
+      "title": "Project four",
+      "description": "A clean and minimal web application for tracking daily tasks and managing priorities.",
+      "tags": ["React", "Next.js", "Tailwind"],
+      "image": "/api/placeholder/640/360",
+      "sourceUrl": "#",
+      "pageUrl": "#"
+    },
+    {
+      "id": 5,
+      "title": "Project five",
+      "description": "A clean and minimal web application for tracking daily tasks and managing priorities.",
+      "tags": ["React", "Next.js", "Tailwind"],
+      "image": "/api/placeholder/640/360",
+      "sourceUrl": "#",
+      "pageUrl": "#"
+    }
+  ]
+}
