@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Section from "./Utils/Section";
+import Heading from "./Utils/Heading";
 import Cards from "./Projects/Cards";
 
 const Projects = () => {
@@ -32,7 +33,8 @@ const Projects = () => {
 
   return (
     <Section anchor="projects">
-      <h2 className="font-bold text-3xl">Projects</h2>
+      <Heading text="Projects" />
+
       {isLoading ? (
         <p>Loading projects...</p>
       ) : error ? (
