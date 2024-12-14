@@ -7,14 +7,14 @@ const Header = () => {
         <span className="font-semibold text-lg">Miura</span>
         <nav>
           <ul className="flex space-x-8 text-sm">
-            <li>
+            {/* <li>
               <a
                 href="#about"
                 className="transition-all text-gray-600 hover:text-gray-900 border-b border-transparent hover:border-gray-900"
               >
                 About
               </a>
-            </li>
+            </li> */}
             <li>
               <a
                 href="#projects"
