@@ -12,12 +12,14 @@ export async function generateStaticParams() {
 }
 
 type ProjectParams = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 export default async function ProjectPage({ params }: ProjectParams) {
   // paramsはpromiseで扱われるため、そのpromiseを解決する必要がある。
-  const { id } = await Promise.resolve(params);
+  // 型定義の段階で、promiseとして定義しているので、Promise.resolveでPromise変換が不要。
+  const resolvedParams = await params;
+  const { id } = resolvedParams;
 
   // pageDataから、paramsのidと同じデータをまとめているオブジェクトを取得
   const pageItem = pageData.find((item) => item.id === id);
