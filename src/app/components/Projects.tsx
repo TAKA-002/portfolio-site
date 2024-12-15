@@ -1,3 +1,4 @@
+// ブラウザ側で動的に実行されるコンポーネントであることを明示する
 "use client";
 
 import React, { useState, useEffect } from "react";
