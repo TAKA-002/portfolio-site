@@ -1,12 +1,12 @@
 import React from "react";
 import { Github, ExternalLink } from "lucide-react";
-import { Project } from "@/app/types/projects";
+import { ProjectsList } from "@/app/types/projectsList";
 import { TAG_COLORS } from "./variables";
 import { getAssetPath } from "../Utils/Process";
 import HeadingLevel3 from "../Utils/HeadingLevel3";
 
 type CardsProps = {
-  data: Project[];
+  data: ProjectsList[];
 };
 
 const getTagColor = (tag: string) => {
