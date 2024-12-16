@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { pageData } from "../variables";
-import ProjectBase from "@/app/components/Projects/ProjectBase";
+import { pageData } from "../../components/Projects/articles";
+import ProjectBase from "../../components/Projects/ProjectBase";
 
 // 静的サイト生成（SSG）+ ダイナミックルーティングの場合、明示しないといけない。
 export const dynamic = "force-static";
