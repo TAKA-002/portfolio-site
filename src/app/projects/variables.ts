@@ -1,5 +1,6 @@
 export type PageItem = {
   id: string;
+  slug: string,
   title: string;
   // 他のプロパティも追加可能
 }
@@ -7,22 +8,27 @@ export type PageItem = {
 export const pageData: PageItem[] = [
   {
     id: "1",
-    title: "aaaaaaaaaa"
+    slug: "bdc-lp",
+    title: "BDC ピラティス LPページコーディング | Takayuki Miura PortFolio"
   },
   {
     id: "2",
-    title: "aaaaaaaaaa"
+    slug: "text-manipulator",
+    title: "Text Manipulator App | Takayuki Miura PortFolio"
   },
   {
     id: "3",
-    title: "aaaaaaaaaa"
+    slug: "image-creator",
+    title: "image-creator Web App | Takayuki Miura PortFolio"
   },
   {
     id: "4",
-    title: "aaaaaaaaaa"
+    slug: "senkyo-web",
+    title: "選挙WEB 各種ページ制作・運用 | Takayuki Miura PortFolio"
   },
   {
     id: "5",
-    title: "aaaaaaaaaa"
+    slug: "worldcup-2022",
+    title: "サッカーワールドカップ2022 WebAPI データ処理 | Takayuki Miura PortFolio"
   }
 ]

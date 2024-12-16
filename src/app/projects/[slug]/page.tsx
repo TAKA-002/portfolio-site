@@ -7,22 +7,22 @@ export const dynamic = "force-static";
 export async function generateStaticParams() {
   // 例: プロジェクトIDのリストを返す
   return pageData.map((item) => ({
-    id: item.id,
+    slug: item.slug,
   }));
 }
 
 type ProjectParams = {
-  params: Promise<{ id: string }>;
+  params: Promise<{ slug: string }>;
 };
 
 export default async function ProjectPage({ params }: ProjectParams) {
   // paramsはpromiseで扱われるため、そのpromiseを解決する必要がある。
   // 型定義の段階で、promiseとして定義しているので、Promise.resolveでPromise変換が不要。
   const resolvedParams = await params;
-  const { id } = resolvedParams;
+  const { slug } = resolvedParams;
 
   // pageDataから、paramsのidと同じデータをまとめているオブジェクトを取得
-  const pageItem = pageData.find((item) => item.id === id);
+  const pageItem = pageData.find((item) => item.slug === slug);
   if (!pageItem) return;
 
   // オブジェクトから情報を取得
@@ -30,7 +30,7 @@ export default async function ProjectPage({ params }: ProjectParams) {
 
   return (
     <div>
-      <h1 className="h-[1000px] bg-black">Project {id}</h1>
+      <h1 className="h-[1000px] bg-black">Project {slug}</h1>
       <h2>{title}</h2>
     </div>
   );
