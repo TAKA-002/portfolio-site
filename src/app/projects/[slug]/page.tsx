@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { pageData } from "../variables";
+import ProjectBase from "@/app/components/Projects/ProjectBase";
 
 // 静的サイト生成（SSG）+ ダイナミックルーティングの場合、明示しないといけない。
 export const dynamic = "force-static";
@@ -32,8 +33,10 @@ export async function generateMetadata({
 
   return {
     title: `${projectData?.title} | Takayuki Miura PortFolio`,
+    description: projectData.description,
     openGraph: {
       title: `${projectData?.title} | Takayuki Miura PortFolio`,
+      description: projectData.description,
       type: "article",
     },
   };
@@ -50,13 +53,9 @@ export default async function ProjectPage({ params }: ProjectParams) {
     notFound();
   }
 
-  // オブジェクトから情報を取得
-  const { title } = pageItem;
-
   return (
-    <div>
-      <h1 className="h-[1000px] bg-black">Project {slug}</h1>
-      <h2>{title}</h2>
-    </div>
+    <>
+      <ProjectBase pageItem={pageItem} />
+    </>
   );
 }
