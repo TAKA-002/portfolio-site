@@ -1,6 +1,6 @@
 import React from "react";
 import { Github, ExternalLink } from "lucide-react";
-import { ProjectsList } from "@/app/types/projectsList";
+import { ProjectsList } from "../../types/projectsList";
 import { getAssetPath } from "../Utils/Process";
 import HeadingLevel3 from "../Utils/HeadingLevel3";
 import ProjectTags from "./ProjectTags";

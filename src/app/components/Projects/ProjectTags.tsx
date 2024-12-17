@@ -5,7 +5,12 @@ const getTagColor = (tag: string) => {
   return TAG_COLORS[tag] || TAG_COLORS.default;
 };
 
-const ProjectTags = ({ tags, id }) => {
+interface ProjectTagsProps {
+  tags: string[];
+  id: string;
+}
+
+const ProjectTags = ({ tags, id }: ProjectTagsProps) => {
   return (
     <div className="mb-4 flex flex-row flex-wrap gap-2">
       {tags.map((item, index) => {
