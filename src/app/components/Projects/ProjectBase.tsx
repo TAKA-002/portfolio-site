@@ -1,21 +1,13 @@
 import React from "react";
 import Section from "../Utils/Section";
+import ProjectHeader from "./ProjectHeader";
 
 const ProjectBase = ({ pageItem }) => {
   const { title, description, image } = pageItem;
-  console.log("pageItem: ", pageItem);
 
   return (
     <Section>
-      <div className="flex flex-row">
-        <div>
-          <h1>{title}</h1>
-          <p>{description}</p>
-        </div>
-        <figure>
-          <img src={image} alt="" />
-        </figure>
-      </div>
+      <ProjectHeader title={title} description={description} image={image} />
     </Section>
   );
 };
