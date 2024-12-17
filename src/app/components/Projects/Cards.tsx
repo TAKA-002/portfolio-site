@@ -1,16 +1,12 @@
 import React from "react";
 import { Github, ExternalLink } from "lucide-react";
 import { ProjectsList } from "@/app/types/projectsList";
-import { TAG_COLORS } from "./variables";
 import { getAssetPath } from "../Utils/Process";
 import HeadingLevel3 from "../Utils/HeadingLevel3";
+import ProjectTags from "./ProjectTags";
 
 type CardsProps = {
   data: ProjectsList[];
-};
-
-const getTagColor = (tag: string) => {
-  return TAG_COLORS[tag] || TAG_COLORS.default;
 };
 
 const Cards = ({ data }: CardsProps) => {
@@ -38,21 +34,7 @@ const Cards = ({ data }: CardsProps) => {
                   <p className="mb-4 leading-normal text-base md:text-lg">
                     {description}
                   </p>
-
-                  <div className="mb-4 flex flex-row flex-wrap gap-2">
-                    {tags.map((item, index) => {
-                      return (
-                        <span
-                          key={`${id}-${item}-${index}`}
-                          className={`px-4 py-1 text-sm rounded-2xl ${getTagColor(
-                            item
-                          )}`}
-                        >
-                          {item}
-                        </span>
-                      );
-                    })}
-                  </div>
+                  <ProjectTags tags={tags} id={id} />
 
                   <div className="flex flex-row flex-wrap gap-x-4 gap-y-2">
                     {sourceUrl && (
