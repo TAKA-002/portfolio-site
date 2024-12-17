@@ -1,4 +1,5 @@
 import React from "react";
+import { getAssetPath } from "../Utils/Process";
 
 interface ProjectHeaderProps {
   title: string;
@@ -12,7 +13,7 @@ const ProjectHeader = ({ title, description, image }: ProjectHeaderProps) => {
       <figure className="w-full h-full aspect-video md:w-[52.18%] shrink-0 border border-gray-200 rounded-xl">
         <img
           className="w-full h-full object-cover rounded-xl"
-          src={image}
+          src={getAssetPath(image)} // ハードコードされたURLを変数に
           alt=""
         />
       </figure>
