@@ -18,7 +18,7 @@ const Projects = () => {
 
     async function fetchProjectsData() {
       try {
-        const res = await fetch(getAssetPath("/data/projects.json"));
+        const res = await fetch(getAssetPath("/data/projectsList.json"));
         if (!res.ok) {
           throw new Error("Failed to fetch");
         }
