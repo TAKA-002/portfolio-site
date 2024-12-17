@@ -3,7 +3,30 @@ import Section from "../Utils/Section";
 import ProjectHeader from "./ProjectHeader";
 import ProjectOverview from "./ProjectOverview";
 
-const ProjectBase = ({ pageItem }) => {
+interface PageItem {
+  id: string;
+  slug: string;
+  title: string;
+  description: string;
+  image: string;
+  overview: {
+    text: string;
+    tags: string[];
+    period: string;
+    role: string;
+    team: string;
+    links: {
+      sourceUrl: string;
+      pageUrl: string;
+    };
+  };
+}
+
+interface ProjectBaseProps {
+  pageItem: PageItem;
+}
+
+const ProjectBase = ({ pageItem }: ProjectBaseProps) => {
   const { id, title, description, image, overview } = pageItem;
 
   return (
