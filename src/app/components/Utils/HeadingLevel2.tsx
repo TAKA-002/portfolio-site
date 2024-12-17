@@ -2,9 +2,12 @@ import React from "react";
 
 type HeadingLevel2Props = {
   text: string;
-  useProject: boolean;
+  useProject?: boolean;
 };
-const HeadingLevel2 = ({ text, useProject }: HeadingLevel2Props) => {
+const HeadingLevel2 = ({
+  text,
+  useProject = undefined,
+}: HeadingLevel2Props) => {
   if (useProject) {
     return <h2 className="font-bold text-2xl">{text}</h2>;
   }
