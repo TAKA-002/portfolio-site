@@ -22,11 +22,7 @@ interface PageItem {
   };
 }
 
-interface ProjectBaseProps {
-  pageItem: PageItem;
-}
-
-export default function ProjectBase({ pageItem }: ProjectBaseProps) {
+export default function ProjectBase({ pageItem }: { pageItem: PageItem }) {
   const { id, title, description, image, overview } = pageItem;
 
   return (

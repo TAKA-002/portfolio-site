@@ -3,11 +3,7 @@ import { Github, ExternalLink } from "lucide-react";
 import HeadingLevel2 from "../Utils/HeadingLevel2";
 import ProjectTags from "./ProjectTags";
 
-interface InformationTitleProps {
-  text: string;
-}
-
-const InformationTitle = ({ text }: InformationTitleProps) => {
+const InformationTitle = ({ text }: { text: string }) => {
   return <span className="text-sm text-gray-400 font-semibold">{text}</span>;
 };
 
