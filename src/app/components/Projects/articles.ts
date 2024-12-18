@@ -14,7 +14,16 @@ interface articleItem {
       sourceUrl: string,
       pageUrl: string,
     }
-  }
+  },
+  highlights: Highlights[],
+}
+
+interface Highlights {
+  heading: string;
+  icon: string;
+  summary: string;
+  tasks: string[];
+  code: string;
 }
 
 export const projectArticles: articleItem[] = [
@@ -34,7 +43,23 @@ export const projectArticles: articleItem[] = [
         sourceUrl: "",
         pageUrl: "https://bdcpilates.com/for_beginners"
       }
-    }
+    },
+    highlights: [
+      {
+        heading: "認証システムの実装",
+        icon: "",
+        summary: "lorem",
+        tasks: ["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "bbbbbbbbbbbbbbbbbbbbbbbbbb", "ccccccccccccccccccccccc"],
+        code: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      },
+      {
+        heading: "認証システムの実装",
+        icon: "",
+        summary: "lorem",
+        tasks: ["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "bbbbbbbbbbbbbbbbbbbbbbbbbb", "ccccccccccccccccccccccc"],
+        code: "",
+      }
+    ],
   },
   {
     id: "2",
@@ -52,7 +77,23 @@ export const projectArticles: articleItem[] = [
         sourceUrl: "https://github.com/TAKA-002/text-manipulator",
         pageUrl: "https://miu-parts.work/text-manipulator/"
       }
-    }
+    },
+    highlights: [
+      {
+        heading: "認証システムの実装",
+        icon: "",
+        summary: "lorem",
+        tasks: ["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "bbbbbbbbbbbbbbbbbbbbbbbbbb", "ccccccccccccccccccccccc"],
+        code: "",
+      },
+      {
+        heading: "認証システムの実装",
+        icon: "",
+        summary: "lorem",
+        tasks: ["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "bbbbbbbbbbbbbbbbbbbbbbbbbb", "ccccccccccccccccccccccc"],
+        code: "",
+      }
+    ],
   },
   {
     id: "3",
@@ -70,7 +111,16 @@ export const projectArticles: articleItem[] = [
         sourceUrl: "https://github.com/TAKA-002/image-creator",
         pageUrl: ""
       }
-    }
+    },
+    highlights: [
+      {
+        heading: "認証システムの実装",
+        icon: "",
+        summary: "lorem",
+        tasks: ["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "bbbbbbbbbbbbbbbbbbbbbbbbbb", "ccccccccccccccccccccccc"],
+        code: "",
+      }
+    ],
   },
   {
     id: "4",
@@ -88,7 +138,16 @@ export const projectArticles: articleItem[] = [
         sourceUrl: "",
         pageUrl: "https://www.nhk.or.jp/senkyo/"
       }
-    }
+    },
+    highlights: [
+      {
+        heading: "認証システムの実装",
+        icon: "",
+        summary: "lorem",
+        tasks: ["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "bbbbbbbbbbbbbbbbbbbbbbbbbb", "ccccccccccccccccccccccc"],
+        code: "",
+      }
+    ],
   },
   {
     id: "5",
@@ -106,6 +165,15 @@ export const projectArticles: articleItem[] = [
         sourceUrl: "",
         pageUrl: "https://www3.nhk.or.jp/news/special/soccer_worldcup/"
       }
-    }
+    },
+    highlights: [
+      {
+        heading: "認証システムの実装",
+        icon: "",
+        summary: "lorem",
+        tasks: ["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "bbbbbbbbbbbbbbbbbbbbbbbbbb", "ccccccccccccccccccccccc"],
+        code: "",
+      }
+    ],
   }
 ]
