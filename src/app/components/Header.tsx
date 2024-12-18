@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-const Header = () => {
+export default function Header() {
   return (
     <header className="fixed z-50 top-0 w-full bg-white/80 backdrop-blur-sm border-b border-gray-200">
       <div className="max-w-6xl h-16 flex justify-between items-center px-4 mx-auto">
@@ -39,6 +39,4 @@ const Header = () => {
       </div>
     </header>
   );
-};
-
-export default Header;
+}

@@ -7,7 +7,7 @@ import Section from "./Utils/Section";
 import HeadingLevel2 from "./Utils/HeadingLevel2";
 import Cards from "./Projects/Cards";
 
-const ProjectsList = () => {
+export default function ProjectsList() {
   const [projectsData, setProjectsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
@@ -54,6 +54,4 @@ const ProjectsList = () => {
       )}
     </Section>
   );
-};
-
-export default ProjectsList;
+}
