@@ -1,4 +1,4 @@
-export const getAssetPath = (path: string) => {
+export function getAssetPath(path: string) {
 
   const isAbsolutePath = (path: string) => {
     if (path.includes('https')) return true;
