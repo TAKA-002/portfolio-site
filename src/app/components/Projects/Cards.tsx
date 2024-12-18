@@ -1,13 +1,22 @@
 import React from "react";
 import { Github, ExternalLink } from "lucide-react";
-import { ProjectsList } from "../../types/projectsList";
 import { getAssetPath } from "../Utils/Process";
 import HeadingLevel3 from "../Utils/HeadingLevel3";
 import ProjectTags from "./ProjectTags";
 
-type CardsProps = {
+interface ProjectsList {
+  id: string;
+  title: string;
+  description: string;
+  tags: string[];
+  image: string;
+  sourceUrl?: string;
+  pageUrl?: string;
+}
+
+interface CardsProps {
   data: ProjectsList[];
-};
+}
 
 const Cards = ({ data }: CardsProps) => {
   return (
