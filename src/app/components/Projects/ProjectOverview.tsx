@@ -39,17 +39,17 @@ export default function ProjectOverview({
       <div className="grid grid-cols-2 gap-x-2 gap-y-6 w-full md:w-[52.18%] shrink-0">
         <div className="flex flex-col gap-1">
           <InformationTitle text="期間" />
-          <span>{period ? period : ""}</span>
+          <span>{period || ""}</span>
         </div>
 
         <div className="flex flex-col gap-1">
           <InformationTitle text="役割" />
-          <span>{role ? role : ""}</span>
+          <span>{role || ""}</span>
         </div>
 
         <div className="flex flex-col gap-1">
           <InformationTitle text="チーム規模" />
-          <span>{team ? team : ""}</span>
+          <span>{team || ""}</span>
         </div>
 
         <div className="flex flex-col gap-1">
