@@ -57,27 +57,31 @@ export default function ProjectOverview({
           <div className="flex flex-col gap-2">
             {links.sourceUrl && (
               <a
-                className="flex flex-row items-center gap-1"
+                className="flex flex-row items-center gap-1 group"
                 href={links.sourceUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="View source code"
               >
-                <Github />
-                Source
+                <Github className="transition-transform duration-300 group-hover:rotate-12" />
+                <span className="transition-all duration-300 group-hover:translate-x-1">
+                  Source
+                </span>
               </a>
             )}
 
             {links.pageUrl && (
               <a
-                className="flex flex-row items-center gap-1"
+                className="flex flex-row items-center gap-1 group"
                 href={links.pageUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Go to page"
               >
-                <ExternalLink />
-                Go to Page
+                <ExternalLink className="transition-transform duration-300 group-hover:rotate-12" />
+                <span className="transition-all duration-300 group-hover:translate-x-1">
+                  Go to Page
+                </span>
               </a>
             )}
           </div>
