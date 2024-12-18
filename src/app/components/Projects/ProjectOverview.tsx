@@ -36,7 +36,7 @@ export default function ProjectOverview({
         <ProjectTags tags={tags} id={id} />
       </div>
 
-      <div className="grid grid-cols-2 gap-x-2 gap-y-6 w-full md:w-[52.18%] shrink-0">
+      <div className="grid grid-cols-2 gap-x-4 gap-y-6 w-full md:w-[52.18%] shrink-0">
         <div className="flex flex-col gap-1">
           <InformationTitle text="期間" />
           <span>{period || ""}</span>
