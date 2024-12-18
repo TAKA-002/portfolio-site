@@ -1,4 +1,4 @@
-export type PageItem = {
+interface articleItem {
   id: string;
   slug: string,
   title: string;
@@ -17,7 +17,7 @@ export type PageItem = {
   }
 }
 
-export const pageData: PageItem[] = [
+export const projectArticles: articleItem[] = [
   {
     id: "1",
     slug: "bdc-lp",

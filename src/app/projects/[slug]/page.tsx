@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { pageData } from "../../components/Projects/articles";
+import { projectArticles } from "../../components/Projects/articles";
 import ProjectBase from "../../components/Projects/ProjectBase";
 
 // 静的サイト生成（SSG）+ ダイナミックルーティングの場合、明示しないといけない。
@@ -13,7 +13,7 @@ type ProjectParams = {
 // 事前にIDのリストをわたしておく。そのとき、promiseを返す関数generateStaticParamsで準備する。
 export async function generateStaticParams() {
   // 例: プロジェクトIDのリストを返す
-  return pageData.map((item) => ({
+  return projectArticles.map((item) => ({
     slug: item.slug,
   }));
 }
@@ -22,9 +22,9 @@ export async function generateMetadata({
   params,
 }: ProjectParams): Promise<Metadata> {
   const { slug } = await params;
-  const projectData = pageData.find((item) => item.slug === slug);
+  const projectData = projectArticles.find((item) => item.slug === slug);
 
-  // pageDataにslugの文字列が存在しない場合404ページ用titleを設定
+  // projectArticlesにslugの文字列が存在しない場合404ページ用titleを設定
   if (!projectData) {
     return {
       title: "Not Found | Takayuki Miura PortFolio",
@@ -47,8 +47,8 @@ export default async function ProjectPage({ params }: ProjectParams) {
   // 型定義の段階で、promiseとして定義しているので、Promise.resolveでPromise変換が不要。
   const { slug } = await params;
 
-  // pageDataから、paramsのidと同じデータをまとめているオブジェクトを取得
-  const pageItem = pageData.find((item) => item.slug === slug);
+  // projectArticlesから、paramsのidと同じデータをまとめているオブジェクトを取得
+  const pageItem = projectArticles.find((item) => item.slug === slug);
   if (!pageItem) {
     notFound();
   }
