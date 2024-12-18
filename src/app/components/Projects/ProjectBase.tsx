@@ -26,7 +26,7 @@ interface ProjectBaseProps {
   pageItem: PageItem;
 }
 
-const ProjectBase = ({ pageItem }: ProjectBaseProps) => {
+export default function ProjectBase({ pageItem }: ProjectBaseProps) {
   const { id, title, description, image, overview } = pageItem;
 
   return (
@@ -37,6 +37,4 @@ const ProjectBase = ({ pageItem }: ProjectBaseProps) => {
       </main>
     </Section>
   );
-};
-
-export default ProjectBase;
+}

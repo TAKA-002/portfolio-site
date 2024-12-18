@@ -7,7 +7,11 @@ interface ProjectHeaderProps {
   image: string;
 }
 
-const ProjectHeader = ({ title, description, image }: ProjectHeaderProps) => {
+export default function ProjectHeader({
+  title,
+  description,
+  image,
+}: ProjectHeaderProps) {
   return (
     <div className="flex flex-col md:flex-row-reverse gap-6 pb-16">
       <figure className="w-full h-full aspect-video md:w-[52.18%] shrink-0 border border-gray-200 rounded-xl">
@@ -37,6 +41,4 @@ const ProjectHeader = ({ title, description, image }: ProjectHeaderProps) => {
       </div>
     </div>
   );
-};
-
-export default ProjectHeader;
+}

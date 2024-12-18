@@ -10,7 +10,7 @@ interface ProjectTagsProps {
   id: string;
 }
 
-const ProjectTags = ({ tags, id }: ProjectTagsProps) => {
+export default function ProjectTags({ tags, id }: ProjectTagsProps) {
   return (
     <div className="mb-4 flex flex-row flex-wrap gap-2">
       {tags.map((item, index) => {
@@ -25,6 +25,4 @@ const ProjectTags = ({ tags, id }: ProjectTagsProps) => {
       })}
     </div>
   );
-};
-
-export default ProjectTags;
+}

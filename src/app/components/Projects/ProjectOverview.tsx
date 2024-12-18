@@ -26,8 +26,12 @@ interface ProjectOverviewProps {
   id: string;
 }
 
-const ProjectOverview = ({ overview, id }: ProjectOverviewProps) => {
+export default function ProjectOverview({
+  overview,
+  id,
+}: ProjectOverviewProps) {
   const { text, tags, period, role, team, links } = overview;
+
   return (
     <div className="flex flex-col md:flex-row gap-6 py-16 border-t border-gray-200">
       <div className="flex flex-col flex-1 gap-2 md:gap-6">
@@ -85,6 +89,4 @@ const ProjectOverview = ({ overview, id }: ProjectOverviewProps) => {
       </div>
     </div>
   );
-};
-
-export default ProjectOverview;
+}

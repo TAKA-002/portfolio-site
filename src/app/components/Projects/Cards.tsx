@@ -18,7 +18,7 @@ interface CardsProps {
   data: ProjectsList[];
 }
 
-const Cards = ({ data }: CardsProps) => {
+export default function Cards({ data }: CardsProps) {
   return (
     <div className="my-20">
       <ul className="grid grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-12 gap-y-8 md:gap-y-16">
@@ -79,6 +79,4 @@ const Cards = ({ data }: CardsProps) => {
       </ul>
     </div>
   );
-};
-
-export default Cards;
+}
