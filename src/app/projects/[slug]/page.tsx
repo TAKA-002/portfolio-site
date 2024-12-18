@@ -6,16 +6,16 @@ import ProjectBase from "../../components/Projects/ProjectBase";
 // 静的サイト生成（SSG）+ ダイナミックルーティングの場合、明示しないといけない。
 export const dynamic = "force-static";
 
-type ProjectParams = {
-  params: Promise<{ slug: string }>;
-};
-
 // 事前にIDのリストをわたしておく。そのとき、promiseを返す関数generateStaticParamsで準備する。
 export async function generateStaticParams() {
   // 例: プロジェクトIDのリストを返す
   return projectArticles.map((item) => ({
     slug: item.slug,
   }));
+}
+
+interface ProjectParams {
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateMetadata({
