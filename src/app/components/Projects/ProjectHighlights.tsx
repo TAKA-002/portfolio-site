@@ -32,7 +32,7 @@ export default function ProjectHighlights({ highlights }: ProjectHighlights) {
 
               <div className="mt-8 w-full flex flex-col md:flex-row gap-8 md:gap-12">
                 <div className="w-full md:flex-1 md:min-w-0">
-                  <p className="text-base">{item.summary}</p>
+                  <p className="text-base leading-relaxed">{item.summary}</p>
 
                   <ul className="mt-4 flex flex-col gap-2">
                     {item.tasks.map((item, index) => {
@@ -48,8 +48,8 @@ export default function ProjectHighlights({ highlights }: ProjectHighlights) {
                   </ul>
                 </div>
 
-                <div className="md:w-[52.18%] md:basis-[52.18%]">
-                  <pre className="bg-gray-900 rounded-lg p-6 overflow-scroll">
+                <div className="pr-2 md:w-[52.18%] md:basis-[52.18%] max-h-96 overflow-y-scroll rounded-lg">
+                  <pre className="bg-gray-900 rounded-xl p-6">
                     <code className="text-sm text-gray-200 whitespace-pre-wrap break-all">
                       {item.code}
                     </code>

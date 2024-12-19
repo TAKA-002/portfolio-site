@@ -32,7 +32,7 @@ export default function ProjectOverview({
     <div className="flex flex-col md:flex-row gap-6 py-16 border-t border-gray-200">
       <div className="flex flex-col flex-1 gap-2 md:gap-6">
         <HeadingLevel2 text="概要 - Overview" useProject />
-        <p>{text}</p>
+        <p className="text-base leading-relaxed">{text}</p>
         <ProjectTags tags={tags} id={id} />
       </div>
 

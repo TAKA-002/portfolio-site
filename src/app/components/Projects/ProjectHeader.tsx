@@ -31,7 +31,7 @@ export default function ProjectHeader({
           {title}
         </h1>
         <p
-          className="flex-1"
+          className="flex-1 leading-relaxed"
           style={{
             fontSize: "min(4.26vw, 20px)",
           }}
