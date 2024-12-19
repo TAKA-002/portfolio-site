@@ -34,7 +34,7 @@ export const projectArticles: articleItem[] = [
     description: "静的ファイルでの書き出しを目指してEJSを採用いたしました。開発環境をシンプルに構築できる点も魅力でした。JS、CSSのバンドルも含めてWebpackを活用し、効率化を実現しました。",
     image: "/images/tmb/tmb_bdcpilates.avif",
     overview: {
-      text: "lorem",
+      text: "知人のディレクターからの依頼をいただき、LPページ全体のコーディングを実施しました。このタスクはコーディング期間が5日程用意されておりましたが、「コアウェブバイタルで高得点を目指すように」とのご連絡をいただいていました。そのため、「静的HTMLファイルを出力」「CSS設計はBEM」「SCSSを使用」「バンドルファイルでファイル容量と通信回数を軽減」という最低限の開発環境を構築してコーディングを行いました。",
       tags: ["Webpack", "EJS", "SCSS"],
       period: "2024.06",
       role: "コーディング",
@@ -46,18 +46,11 @@ export const projectArticles: articleItem[] = [
     },
     highlights: [
       {
-        heading: "認証システムの実装",
+        heading: "コーディング環境",
         icon: "",
-        summary: "lorem",
-        tasks: ["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "bbbbbbbbbbbbbbbbbbbbbbbbbb", "ccccccccccccccccccccccc"],
-        code: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      },
-      {
-        heading: "認証システムの実装",
-        icon: "",
-        summary: "lorem",
-        tasks: ["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "bbbbbbbbbbbbbbbbbbbbbbbbbb", "ccccccccccccccccccccccc"],
-        code: "",
+        summary: "HTML、CSS、JSという成果物に対する開発中の差分を正確に把握し、意図しない差分（インデントや、改行箇所の変更）が紛れ込む状況を減らしました。これによりコーディングスピードを維持することができたと思います。フォーマッタ、リンター、バンドラー、タスクランナーの設定ファイルを理解しておくことの重要性を再確認できました。また、セクション内HTMLに反映する情報を、JSONファイルにて一言管理することで、確認箇所の統一化ができてスピードアップが図れたと思います。",
+        tasks: ["webpackとgulpによるEJS、CSS、JSのバンドルファイル生成", "stylelintによる最低限のCSSチェックと並び順の統一", "JSONによるデータの一元管理"],
+        code: "//gulpfile.jsのHTML生成タスク\nconst createIndexPage = (done) => {\n  const pageData = JSON.parse(\n    fs.readFileSync(\"./src/ejs/data/pageData.json\", \"utf-8\")\n  );\n  gulp\n    .src([\"./src/ejs/index.ejs\", \"!\" + \"./src/_inc/**/_*.ejs\"])\n    .pipe(\n      ejs({\n        pageData,\n      })\n    )\n    .pipe(plumber())\n    .pipe(\n      htmlbeautify({\n        indent_size: 2,\n        indent_char: \" \",\n        max_preserve_newlines: 0,\n        preserve_newlines: false,\n        indent_inner_html: false,\n        extra_liners: [\n          \"head\",\n          \"body\",\n          \"html\",\n          \"section\",\n          \"aside\",\n          \"header\",\n          \"footer\",\n        ],\n      })\n    )\n    .pipe(\n      rename({\n        basename: \"index\",\n        extname: \".html\",\n      })\n    )\n    .pipe(gulp.dest(\"../\"))\n    .on(\"end\", done);\n};"
       }
     ],
   },
