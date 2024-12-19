@@ -47,7 +47,7 @@ export default async function ProjectPage({ params }: ProjectParams) {
   // 型定義の段階で、promiseとして定義しているので、Promise.resolveでPromise変換が不要。
   const { slug } = await params;
 
-  // projectArticlesから、paramsのidと同じデータをまとめているオブジェクトを取得
+  // projectArticlesから、paramsのslugと同じデータをまとめているオブジェクトを取得
   const pageItem = projectArticles.find((item) => item.slug === slug);
   if (!pageItem) {
     notFound();

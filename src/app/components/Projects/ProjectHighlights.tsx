@@ -38,7 +38,7 @@ export default function ProjectHighlights({ highlights }: ProjectHighlights) {
                     {item.tasks.map((item, index) => {
                       return (
                         <li
-                          className="relative pl-4 before:absolute before:inline-block before:w-2 before:h-2 before:rounded-full before:bg-blue-500 before:top-[12px] before:left-0 break-words"
+                          className="relative pl-4 before:absolute before:inline-block before:w-2 before:h-2 before:rounded-full before:bg-blue-500 before:top-[10px] before:left-0 break-words"
                           key={index}
                         >
                           {item}
