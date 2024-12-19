@@ -15,7 +15,7 @@ interface articleItem {
       pageUrl: string,
     }
   },
-  highlights: Highlights[],
+  highlights?: Highlights[],
 }
 
 interface Highlights {
@@ -102,7 +102,7 @@ export const projectArticles: articleItem[] = [
     description: "「特定の画像をデータ入力をすれば作成できるツールがほしい」との要望の実現を目指して開発しました。MAMPのローカルサーバーで起動します。PHP側は、更新されたJSONファイルの生成に使用し、画面表示をJSが担当するようにしました。CRUDの機能を構築したアプリとなりました。",
     image: "/images/tmb/tmb_image-creator.avif",
     overview: {
-      text: "lorem",
+      text: "特定の曜日に特定のサイト内に設置する定型の画像作成というタスクがあり、それをデータ入力のみで作成できるようにしました。入力したデータはJSONデータで保存されており、Gitを経由することで、他者にも進捗を共有できるようになりました。",
       tags: ["PHP", "JavaScript", "jQuery", "Tailwind"],
       period: "2022.07 ~",
       role: "コーディング、デザイン",
@@ -112,15 +112,7 @@ export const projectArticles: articleItem[] = [
         pageUrl: ""
       }
     },
-    highlights: [
-      {
-        heading: "認証システムの実装",
-        icon: "",
-        summary: "lorem",
-        tasks: ["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "bbbbbbbbbbbbbbbbbbbbbbbbbb", "ccccccccccccccccccccccc"],
-        code: "",
-      }
-    ],
+    highlights: undefined,
   },
   {
     id: "4",

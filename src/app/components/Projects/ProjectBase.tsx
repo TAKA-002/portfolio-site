@@ -21,7 +21,7 @@ interface PageItem {
       pageUrl: string;
     };
   };
-  highlights: ProjectHighlighs[];
+  highlights?: ProjectHighlighs[];
 }
 
 interface ProjectHighlighs {
@@ -40,7 +40,8 @@ export default function ProjectBase({ pageItem }: { pageItem: PageItem }) {
       <ProjectHeader title={title} description={description} image={image} />
       <main>
         <ProjectOverview overview={overview} id={id} />
-        <ProjectHighlights highlights={highlights} />
+
+        {highlights && <ProjectHighlights highlights={highlights} />}
       </main>
     </Section>
   );
