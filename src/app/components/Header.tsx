@@ -19,20 +19,28 @@ export default function Header() {
               </a>
             </li> */}
             <li>
-              <Link
-                href="#projects"
+              <a
+                href={`${
+                  process.env.NODE_ENV === "production"
+                    ? "/portfolio-site/#projects"
+                    : "/#projects"
+                }`}
                 className="transition-all text-gray-600 hover:text-gray-900 border-b border-transparent hover:border-gray-900"
               >
                 Projects
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
-                href="#skills"
+              <a
+                href={`${
+                  process.env.NODE_ENV === "production"
+                    ? "/portfolio-site/#skills"
+                    : "/#skills"
+                }`}
                 className="transition-all text-gray-600 hover:text-gray-900 border-b border-transparent hover:border-gray-900"
               >
                 Skills
-              </Link>
+              </a>
             </li>
           </ul>
         </nav>

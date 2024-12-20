@@ -121,7 +121,7 @@ export const projectArticles: articleItem[] = [
     description: "業務において様々な経験をさせていただいたWEBサイト。各ページごとに開発環境をもつことで、CSSやJSの影響範囲を限定させながら構築した部分が多いです。大型選挙の特設サイトや、各選挙の一部ページなど、管轄外のページがありつつも、全体的に管理運用を行ってきました。",
     image: "http://www.nhk.or.jp/senkyo/images/ogimage.png",
     overview: {
-      text: "lorem",
+      text: "制作中",
       tags: ["Webpack", "JavaScript", "jQuery", "React", "HTML", "EJS", "CSS", "SCSS", "Tailwind"],
       period: "2021.02 - 2025.02",
       role: "コーディング",
@@ -131,15 +131,7 @@ export const projectArticles: articleItem[] = [
         pageUrl: "https://www.nhk.or.jp/senkyo/"
       }
     },
-    highlights: [
-      {
-        heading: "認証システムの実装",
-        icon: "",
-        summary: "lorem",
-        tasks: ["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "bbbbbbbbbbbbbbbbbbbbbbbbbb", "ccccccccccccccccccccccc"],
-        code: "",
-      }
-    ],
+    highlights: undefined,
   },
   {
     id: "5",
@@ -148,7 +140,7 @@ export const projectArticles: articleItem[] = [
     description: "WebAPI経由でJSONデータを取得し、DOMを構築する処理を担当。掲載情報は、試合日時などの要因から自動で切り替わるように開発しました。試合ごとのページでは、試合進行に合わせてリアルタイムで表示更新が行われるように構築しました。一つのUIを構築するために複数のデータから必要情報を取得して来る必要があり、プロミス処理について深く考えさせられました。",
     image: "http://www3.nhk.or.jp/news/special/soccer_worldcup/2022/images/og_image.jpg",
     overview: {
-      text: "lorem",
+      text: "制作中",
       tags: ["Webpack", "JavaScript", "jQuery"],
       period: "2022.08 - 2022.12",
       role: "コーディング",
@@ -158,14 +150,6 @@ export const projectArticles: articleItem[] = [
         pageUrl: "https://www3.nhk.or.jp/news/special/soccer_worldcup/"
       }
     },
-    highlights: [
-      {
-        heading: "認証システムの実装",
-        icon: "",
-        summary: "lorem",
-        tasks: ["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "bbbbbbbbbbbbbbbbbbbbbbbbbb", "ccccccccccccccccccccccc"],
-        code: "",
-      }
-    ],
+    highlights: undefined,
   }
 ]
