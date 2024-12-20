@@ -7,6 +7,8 @@ import ProjectTags from "./ProjectTags";
 
 interface ProjectsList {
   id: string;
+  slug: string;
+  isLink: boolean;
   title: string;
   description: string;
   tags: string[];
@@ -19,31 +21,67 @@ interface CardsProps {
   data: ProjectsList[];
 }
 
+interface CardFigure {
+  image: string;
+  title: string;
+  isLink: boolean;
+}
+
+const CardFigure = ({ image, title, isLink }: CardFigure) => {
+  return (
+    <figure className="w-full rounded-xl aspect-video overflow-hidden relative">
+      <Image
+        className="object-cover group-hover:scale-105 transition-transform duration-500"
+        src={getAssetPath(image)}
+        alt={`${title} project preview`}
+        fill
+        priority
+        sizes="(max-width: 768px) 50vw, 33vw"
+      />
+
+      {isLink && (
+        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+          <span className="font-bold text-white">View Details</span>
+        </div>
+      )}
+    </figure>
+  );
+};
+
 export default function Cards({ data }: CardsProps) {
   return (
     <div className="my-20">
-      <ul className="grid grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-12 gap-y-8 md:gap-y-16">
+      <ul className="grid grid-cols-1 md:grid-cols-3 gap-x-6 md:gap-x-12 gap-y-8 md:gap-y-16">
         {data.map(
-          ({ id, title, description, tags, image, sourceUrl, pageUrl }) => {
+          ({
+            id,
+            slug,
+            isLink,
+            title,
+            description,
+            tags,
+            image,
+            sourceUrl,
+            pageUrl,
+          }) => {
             return (
-              <li
-                id={`projects-${id}`}
-                className="flex flex-col gap-4"
-                key={id}
-              >
-                <figure className="w-full rounded-xl aspect-video overflow-hidden relative">
-                  <Image
-                    className="object-cover hover:scale-105 transition-transform duration-500"
-                    src={getAssetPath(image)}
-                    alt={`${title} project preview`}
-                    fill
-                    priority
-                    sizes="(max-width: 768px) 50vw, 33vw"
-                  />
-                </figure>
+              <li id={`projects-${id}`} key={id}>
+                {isLink ? (
+                  <a
+                    href={getAssetPath(`/projects/${slug}/`)}
+                    className="flex flex-col gap-4 block group"
+                  >
+                    <CardFigure image={image} title={title} isLink={isLink} />
+                    <HeadingLevel3 text={title} />
+                  </a>
+                ) : (
+                  <div className="flex flex-col gap-4 group">
+                    <CardFigure image={image} title={title} isLink={isLink} />
+                    <HeadingLevel3 text={title} />
+                  </div>
+                )}
 
-                <div>
-                  <HeadingLevel3 text={title} />
+                <div className="mt-4">
                   <p className="mb-4 leading-normal text-base md:text-lg">
                     {description}
                   </p>
@@ -62,6 +100,7 @@ export default function Cards({ data }: CardsProps) {
                         Source
                       </a>
                     )}
+
                     {pageUrl && (
                       <a
                         className="text-sm md:text-base flex flex-row gap-2 origin-bottom-left hover:text-gray-600 hover:-rotate-6 hover:scale-105 transition-all"
