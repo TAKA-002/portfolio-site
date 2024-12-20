@@ -1,10 +1,13 @@
 import React from "react";
+import Link from "next/link";
 
-const Header = () => {
+export default function Header() {
   return (
     <header className="fixed z-50 top-0 w-full bg-white/80 backdrop-blur-sm border-b border-gray-200">
       <div className="max-w-6xl h-16 flex justify-between items-center px-4 mx-auto">
-        <span className="font-semibold text-lg">Miura</span>
+        <Link href="/" legacyBehavior>
+          <a className="font-semibold text-lg">Miura</a>
+        </Link>
         <nav>
           <ul className="flex space-x-8 text-sm">
             {/* <li>
@@ -36,6 +39,4 @@ const Header = () => {
       </div>
     </header>
   );
-};
-
-export default Header;
+}

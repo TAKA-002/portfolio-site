@@ -1,12 +1,12 @@
 import Hero from "./components/Hero";
-import Projects from "./components/Projects";
+import ProjectsList from "./components/ProjectsList";
 import Skills from "./components/Skills";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Projects />
+      <ProjectsList />
       <Skills />
     </>
   );

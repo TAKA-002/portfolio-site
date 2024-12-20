@@ -1,3 +1,4 @@
+// ブラウザ側で動的に実行されるコンポーネントであることを明示する
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -6,7 +7,7 @@ import Section from "./Utils/Section";
 import HeadingLevel2 from "./Utils/HeadingLevel2";
 import Cards from "./Projects/Cards";
 
-const Projects = () => {
+export default function ProjectsList() {
   const [projectsData, setProjectsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
@@ -17,7 +18,7 @@ const Projects = () => {
 
     async function fetchProjectsData() {
       try {
-        const res = await fetch(getAssetPath("/data/projects.json"));
+        const res = await fetch(getAssetPath("/data/projectsList.json"));
         if (!res.ok) {
           throw new Error("Failed to fetch");
         }
@@ -53,6 +54,4 @@ const Projects = () => {
       )}
     </Section>
   );
-};
-
-export default Projects;
+}

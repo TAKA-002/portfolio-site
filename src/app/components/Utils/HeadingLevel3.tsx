@@ -1,10 +1,16 @@
 import React from "react";
 
-type HeadingLevel3Props = {
+interface HeadingLevel3Props {
   text: string;
-};
-const HeadingLevel3 = ({ text }: HeadingLevel3Props) => {
-  return <h3 className="mb-4 text-xl font-semibold">{text}</h3>;
-};
+  useProjectHighlights?: boolean;
+}
 
-export default HeadingLevel3;
+export default function HeadingLevel3({
+  text,
+  useProjectHighlights = undefined,
+}: HeadingLevel3Props) {
+  if (useProjectHighlights) {
+    return <h3 className="text-xl font-semibold">{text}</h3>;
+  }
+  return <h3 className="text-xl font-semibold mb-4">{text}</h3>;
+}

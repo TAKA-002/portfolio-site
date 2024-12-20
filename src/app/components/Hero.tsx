@@ -2,7 +2,7 @@ import React from "react";
 import { AnchorButton } from "./Utils/Button";
 import Section from "./Utils/Section";
 
-const Hero = () => {
+export default function Hero() {
   const fadeUpAnimation = (delay = 0) => {
     return {
       animation: `fade-up 1s ease-out ${delay}s`, // 使用するキーフレームと挙動
@@ -49,6 +49,4 @@ const Hero = () => {
       </div>
     </Section>
   );
-};
-
-export default Hero;
+}

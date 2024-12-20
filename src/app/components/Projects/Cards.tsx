@@ -1,19 +1,25 @@
 import React from "react";
+import Image from "next/image";
 import { Github, ExternalLink } from "lucide-react";
-import { Project } from "@/app/types/projects";
-import { TAG_COLORS } from "./variables";
 import { getAssetPath } from "../Utils/Process";
 import HeadingLevel3 from "../Utils/HeadingLevel3";
+import ProjectTags from "./ProjectTags";
 
-type CardsProps = {
-  data: Project[];
-};
+interface ProjectsList {
+  id: string;
+  title: string;
+  description: string;
+  tags: string[];
+  image: string;
+  sourceUrl?: string;
+  pageUrl?: string;
+}
 
-const getTagColor = (tag: string) => {
-  return TAG_COLORS[tag] || TAG_COLORS.default;
-};
+interface CardsProps {
+  data: ProjectsList[];
+}
 
-const Cards = ({ data }: CardsProps) => {
+export default function Cards({ data }: CardsProps) {
   return (
     <div className="my-20">
       <ul className="grid grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-12 gap-y-8 md:gap-y-16">
@@ -25,11 +31,14 @@ const Cards = ({ data }: CardsProps) => {
                 className="flex flex-col gap-4"
                 key={id}
               >
-                <figure className="w-full rounded-xl aspect-video overflow-hidden">
-                  <img
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    src={getAssetPath(image)} // ハードコードされたURLを変数に
-                    alt={`${title} project preview`} // 空のalt属性を意味のあるものに
+                <figure className="w-full rounded-xl aspect-video overflow-hidden relative">
+                  <Image
+                    className="object-cover hover:scale-105 transition-transform duration-500"
+                    src={getAssetPath(image)}
+                    alt={`${title} project preview`}
+                    fill
+                    priority
+                    sizes="(max-width: 768px) 50vw, 33vw"
                   />
                 </figure>
 
@@ -38,21 +47,7 @@ const Cards = ({ data }: CardsProps) => {
                   <p className="mb-4 leading-normal text-base md:text-lg">
                     {description}
                   </p>
-
-                  <div className="mb-4 flex flex-row flex-wrap gap-2">
-                    {tags.map((item, index) => {
-                      return (
-                        <span
-                          key={`${id}-${item}-${index}`}
-                          className={`px-4 py-1 text-sm rounded-2xl ${getTagColor(
-                            item
-                          )}`}
-                        >
-                          {item}
-                        </span>
-                      );
-                    })}
-                  </div>
+                  <ProjectTags tags={tags} id={id} />
 
                   <div className="flex flex-row flex-wrap gap-x-4 gap-y-2">
                     {sourceUrl && (
@@ -88,6 +83,4 @@ const Cards = ({ data }: CardsProps) => {
       </ul>
     </div>
   );
-};
-
-export default Cards;
+}
