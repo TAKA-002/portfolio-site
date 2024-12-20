@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Github, ExternalLink } from "lucide-react";
 import { getAssetPath } from "../Utils/Process";
 import HeadingLevel3 from "../Utils/HeadingLevel3";
@@ -30,11 +31,14 @@ export default function Cards({ data }: CardsProps) {
                 className="flex flex-col gap-4"
                 key={id}
               >
-                <figure className="w-full rounded-xl aspect-video overflow-hidden">
-                  <img
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    src={getAssetPath(image)} // ハードコードされたURLを変数に
-                    alt={`${title} project preview`} // 空のalt属性を意味のあるものに
+                <figure className="w-full rounded-xl aspect-video overflow-hidden relative">
+                  <Image
+                    className="object-cover hover:scale-105 transition-transform duration-500"
+                    src={getAssetPath(image)}
+                    alt={`${title} project preview`}
+                    fill
+                    priority
+                    sizes="(max-width: 768px) 50vw, 33vw"
                   />
                 </figure>
 
