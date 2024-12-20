@@ -1,16 +1,16 @@
 import React from "react";
 
 interface HeadingLevel3Props {
-  text: string;
   useProjectHighlights?: boolean;
+  children: React.ReactNode;
 }
 
 export default function HeadingLevel3({
-  text,
   useProjectHighlights = undefined,
+  children,
 }: HeadingLevel3Props) {
   if (useProjectHighlights) {
-    return <h3 className="text-xl font-semibold">{text}</h3>;
+    return <h3 className="text-xl font-semibold">{children}</h3>;
   }
-  return <h3 className="text-xl font-semibold mb-4">{text}</h3>;
+  return <h3 className="text-xl font-semibold mb-4">{children}</h3>;
 }

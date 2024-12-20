@@ -7,6 +7,8 @@ import ProjectTags from "./ProjectTags";
 
 interface ProjectsList {
   id: string;
+  slug: string;
+  isLink: boolean;
   title: string;
   description: string;
   tags: string[];
@@ -24,7 +26,17 @@ export default function Cards({ data }: CardsProps) {
     <div className="my-20">
       <ul className="grid grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-12 gap-y-8 md:gap-y-16">
         {data.map(
-          ({ id, title, description, tags, image, sourceUrl, pageUrl }) => {
+          ({
+            id,
+            slug,
+            isLink,
+            title,
+            description,
+            tags,
+            image,
+            sourceUrl,
+            pageUrl,
+          }) => {
             return (
               <li
                 id={`projects-${id}`}
@@ -43,7 +55,18 @@ export default function Cards({ data }: CardsProps) {
                 </figure>
 
                 <div>
-                  <HeadingLevel3 text={title} />
+                  <HeadingLevel3>
+                    {isLink ? (
+                      <a
+                        href={getAssetPath(`/projects/${slug}/`)}
+                        className="hover:text-gray-600 transition-colors"
+                      >
+                        {title}
+                      </a>
+                    ) : (
+                      <span>{title}</span>
+                    )}
+                  </HeadingLevel3>
                   <p className="mb-4 leading-normal text-base md:text-lg">
                     {description}
                   </p>
