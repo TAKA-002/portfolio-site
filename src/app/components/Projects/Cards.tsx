@@ -43,16 +43,39 @@ export default function Cards({ data }: CardsProps) {
                 className="flex flex-col gap-4"
                 key={id}
               >
-                <figure className="w-full rounded-xl aspect-video overflow-hidden relative">
-                  <Image
-                    className="object-cover hover:scale-105 transition-transform duration-500"
-                    src={getAssetPath(image)}
-                    alt={`${title} project preview`}
-                    fill
-                    priority
-                    sizes="(max-width: 768px) 50vw, 33vw"
-                  />
-                </figure>
+                {isLink ? (
+                  <figure className="w-full rounded-xl aspect-video overflow-hidden relative group">
+                    <a
+                      href={getAssetPath(`/projects/${slug}/`)}
+                      className="block w-full h-full"
+                    >
+                      <Image
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        src={getAssetPath(image)}
+                        alt={`${title} project preview`}
+                        fill
+                        priority
+                        sizes="(max-width: 768px) 50vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                        <span className="font-bold text-white">
+                          View Details
+                        </span>
+                      </div>
+                    </a>
+                  </figure>
+                ) : (
+                  <figure className="w-full rounded-xl aspect-video overflow-hidden relative">
+                    <Image
+                      className="object-cover hover:scale-105 transition-transform duration-500"
+                      src={getAssetPath(image)}
+                      alt={`${title} project preview`}
+                      fill
+                      priority
+                      sizes="(max-width: 768px) 50vw, 33vw"
+                    />
+                  </figure>
+                )}
 
                 <div>
                   <HeadingLevel3>
