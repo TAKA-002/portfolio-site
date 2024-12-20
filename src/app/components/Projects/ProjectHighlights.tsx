@@ -28,7 +28,7 @@ export default function ProjectHighlights({ highlights }: ProjectHighlights) {
         {highlights.map((item, index) => {
           return (
             <div className="w-full" key={index}>
-              <HeadingLevel3 useProjectHighlights>{item.heading}</HeadingLevel3>
+              <HeadingLevel3 text={item.heading} />
 
               <div className="mt-8 w-full flex flex-col md:flex-row gap-8 md:gap-12">
                 <div className="w-full md:flex-1 md:min-w-0">
