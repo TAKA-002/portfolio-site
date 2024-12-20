@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Github, ExternalLink } from "lucide-react";
 import { getAssetPath } from "../Utils/Process";
 import HeadingLevel3 from "../Utils/HeadingLevel3";
@@ -67,13 +68,13 @@ export default function Cards({ data }: CardsProps) {
             return (
               <li id={`projects-${id}`} key={id}>
                 {isLink ? (
-                  <a
-                    href={getAssetPath(`/projects/${slug}/`)}
+                  <Link
+                    href={`/projects/${slug}`}
                     className="flex flex-col gap-4 block group"
                   >
                     <CardFigure image={image} title={title} isLink={isLink} />
                     <HeadingLevel3 text={title} />
-                  </a>
+                  </Link>
                 ) : (
                   <div className="flex flex-col gap-4 group">
                     <CardFigure image={image} title={title} isLink={isLink} />
