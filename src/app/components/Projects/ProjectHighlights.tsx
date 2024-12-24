@@ -7,6 +7,7 @@ interface ProjectHighlighsProps {
   icon: string;
   summary: string;
   tasks: string[];
+  figure: string;
   code: string;
 }
 
@@ -48,13 +49,26 @@ export default function ProjectHighlights({ highlights }: ProjectHighlights) {
                   </ul>
                 </div>
 
-                <div className="pr-2 md:w-[52.18%] md:basis-[52.18%] max-h-96 overflow-y-scroll rounded-lg">
-                  <pre className="bg-gray-900 rounded-xl p-6">
-                    <code className="text-sm text-gray-200 whitespace-pre-wrap break-all">
-                      {item.code}
-                    </code>
-                  </pre>
-                </div>
+                {/* 画像があれば、画像を表示する */}
+                {item.image !== "" ? (
+                  // 画像
+                  <figure className="w-full md:w-[52.18%] aspect-video rounded-lg">
+                    <img
+                      className="w-full h-auto object-contain rounded-lg"
+                      src={item.image}
+                      alt=""
+                    />
+                  </figure>
+                ) : (
+                  // コード
+                  <div className="pr-2 md:w-[52.18%] md:basis-[52.18%] max-h-96 overflow-y-scroll rounded-lg">
+                    <pre className="bg-gray-900 rounded-xl p-6">
+                      <code className="text-sm text-gray-200 whitespace-pre-wrap break-all">
+                        {item.code}
+                      </code>
+                    </pre>
+                  </div>
+                )}
               </div>
             </div>
           );
