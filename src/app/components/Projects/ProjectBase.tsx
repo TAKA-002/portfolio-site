@@ -29,6 +29,8 @@ interface ProjectHighlighs {
   icon: string;
   summary: string;
   tasks: string[];
+  link: string;
+  image: string;
   code: string;
 }
 

@@ -10,7 +10,6 @@ interface ProjectHighlighsProps {
   tasks: string[];
   link: string;
   image: string;
-  figure: string;
   code: string;
 }
 
