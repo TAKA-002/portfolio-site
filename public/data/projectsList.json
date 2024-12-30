@@ -46,6 +46,17 @@
     },
     {
       "id": "5",
+      "slug": "chief-questionnaire",
+      "isLink": true,
+      "title": "NHK 選挙WEB 全国首長アンケート",
+      "description": "NHKは、2023年の統一地方選挙に伴い、全国1788自治体の長に対してアンケートを行いました。各自治体の回答を掲載するページを、1788自治体分作成しました。1788ページ分のHTMLファイルと、回答を反映させるということで、工夫した点を記載いたします。",
+      "tags": ["Webpack", "JavaScript", "jQuery", "EJS", "SCSS"],
+      "image": "https://www.nhk.or.jp/senkyo-data/chief-questionnaire/2023/images/tmb-prefecture.jpg",
+      "sourceUrl": "",
+      "pageUrl": "https://www.nhk.or.jp/senkyo/chief-questionnaire/2023/prefectures/"
+    },
+    {
+      "id": "6",
       "slug": "worldcup-2022",
       "isLink": true,
       "title": "NHK サッカーワールドカップ2022",
