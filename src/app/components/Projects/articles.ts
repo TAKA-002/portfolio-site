@@ -141,18 +141,37 @@ export const projectArticles: articleItem[] = [
         pageUrl: "https://www.nhk.or.jp/senkyo/"
       }
     },
-    highlights: [{
-      heading: "ユーザー操作の結果通知最適化",
-      icon: "",
-      summary: "アラートを使用する事によるユーザーアクション(クリック)の増加を防止するためにトースト通知を採用。",
-      tasks: ["通知実施後、一定時間後に通知の自動消滅"],
-      link: "https://www.nhk.or.jp/senkyo/chief-questionnaire/2023/prefectures/",
-      image: "https://www3.nhk.or.jp/senkyo-data/chief-questionnaire/2023/images/og/og_image_chief.jpg",
-      code: "useEffect(() => {\n    let timer;\n    if (isToast) {\n      timer = setTimeout(() => {\n        setIsToast(false);\n        setToastKind(\"\");\n      }, 1500);\n    }\n    return () => clearTimeout(timer);\n  }, [isToast]);",
-    }],
+    highlights: undefined,
   },
   {
     id: "5",
+    slug: "chief-questionnaire",
+    title: "NHK 選挙WEB 全国首長アンケート",
+    description: "NHKは、2023年の統一地方選挙に伴い、全国1788自治体の長に対してアンケートを行いました。各自治体の回答を掲載するページを、1788自治体分作成しました。1788ページ分のHTMLファイルと、回答を反映させるということで、工夫した点を記載いたします。",
+    image: "https://www.nhk.or.jp/senkyo-data/chief-questionnaire/2023/images/tmb-prefecture.jpg",
+    overview: {
+      text: "制作中",
+      tags: ["Webpack", "JavaScript", "jQuery", "EJS", "SCSS"],
+      period: "2023.02 - 2023.04",
+      role: "コーディング",
+      team: "3名",
+      links: {
+        sourceUrl: "",
+        pageUrl: "https://www.nhk.or.jp/senkyo/chief-questionnaire/2023/prefectures/"
+      }
+    },
+    highlights: [{
+      heading: "自治体名検索機能の追加",
+      icon: "",
+      summary: "こちらのアンケートは全自治体の長におこなっていることもあり、非常に膨大なページが存在しています。それを自治体名から検索できるようにしました。とくに、複数検索にも対応できるようにしました。一般的にgoogle検索ではスペースで検索キーワードを複数設置すると思います。こちらのページでも複数ワードでの検索ができるように、入力値からあらゆるケースを考え、不要な情報を除去し、必要な状態にするように努めました。",
+      tasks: ["入力値をパラメーターでGETメソッドでの受け渡し", "パラメーターの、全半角スペースなどの処理"],
+      link: "",
+      image: "",
+      code: "const getParameterChars = (parameters) => {\n  // 検索ワードを抽出する\n  return extractWords(decodeURI(parameters));\n}\n/**\n * 検索ワードを抽出する\n * @param {string} parameters - デコードされた文字列「?sw=」以降\n * @returns {Array} - 1つでも配列で戻す\n */\nfunction extractWords(parameters) {\n  // 全角スペースをすべて半角スペースに変換。\n  const replacedSpaceParam = parameters.replace(/　+|\\++/g, \" \")\n  // 今回inputは1つなのは確定なので、「?」も一緒に除去。\n  const removedKeywordParam = replacedSpaceParam.replace(/\\?[a-z]{2}\\=/g, \"\")\n  // 文字列の先頭の半角スペースがあれば除去\n  const removedFstSpaceParam = removedKeywordParam.replace(/^ */g, \"\");\n  // 文字列の先頭の半角スペースがあれば除去\n  const removedFstPlusParam = removedFstSpaceParam.replace(/^\\+*/g, \"\");\n  // 文字列の最後に半角スペースがあれば除去\n  const removedLstSpaceParam = removedFstPlusParam.replace(/ *$/g, \"\");\n  // 文字列の最後に半角スペースがあれば除去\n  const removedLstPlusParam = removedLstSpaceParam.replace(/\\+*$/, \"\");\n  // 分解したものと、文字列としてinputタグに入力するものをreturn\n  return {\n    inputChars: removedLstPlusParam,\n    inputData: removedLstPlusParam.split(\" \")\n  }\n}\nexport { getParameterChars };",
+    }],
+  },
+  {
+    id: "6",
     slug: "worldcup-2022",
     title: "サッカーワールドカップ2022 WebAPI データ処理",
     description: "WebAPI経由でJSONデータを取得し、DOMを構築する処理を担当。掲載情報は、試合日時などの要因から自動で切り替わるように開発しました。試合ごとのページでは、試合進行に合わせてリアルタイムで表示更新が行われるように構築しました。一つのUIを構築するために複数のデータから必要情報を取得して来る必要があり、プロミス処理について深く考えさせられました。",
