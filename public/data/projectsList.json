@@ -39,7 +39,7 @@
       "isLink": true,
       "title": "NHK 選挙WEB",
       "description": "業務において様々な経験をさせていただいたWEBサイト。各ページごとに開発環境をもつことで、CSSやJSの影響範囲を限定させながら構築した部分が多いです。大型選挙の特設サイトや、各選挙の一部ページなど、管轄外のページがありつつも、全体的に管理運用を行ってきました。",
-      "tags": ["Webpack", "JavaScript", "jQuery", "React", "HTML", "EJS", "CSS", "SCSS", "Tailwind"],
+      "tags": ["Webpack", "JavaScript", "jQuery", "React", "HTML", "EJS", "CSS", "SCSS"],
       "image": "http://www.nhk.or.jp/senkyo/images/ogimage.png",
       "sourceUrl": "",
       "pageUrl": "https://www.nhk.or.jp/senkyo/"
