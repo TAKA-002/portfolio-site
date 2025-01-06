@@ -148,7 +148,7 @@ export const projectArticles: articleItem[] = [
           icon: "",
           summary: "選挙WEBのトップページは、いくつかのセクションに分かれていますが、これを１つのxmlファイルに情報をまとめて動的にページを生成しています。",
           tasks: ["xmlファイルをベースに必要なセクションの動的生成", "非同期処理によるsectionタグ作成、section内部のDOM構造の生成などの処理の整理", "クラスのインスタンスによる情報の管理"],
-          link: "",
+          link: "https://www.nhk.or.jp/senkyo/",
           image: "",
           code: "const initDataProcess = new getDataProcess();\n\n    initDataProcess\n      .getDataPromise(INDEX_XML_PATH, 'xml') // xmlの取得\n      .then(() => {\n        // xmlデータをajax_dataに格納後、sectionタグ（HTML）を生成\n        return createSectionTag(initDataProcess.ajax_data);\n      })\n      .then(() => {\n        // sectionタグ（HTML）生成後、sectionの中身の生成\n        // createMainTagの中で、各セクション内部DOM生成を実施。すべて完了したらresolveを返す。\n        return createMainTag(initDataProcess.ajax_data);\n      })\n      .then(() => {\n        createSlideshow(); // スライド起動\n        // 予定の部分の生成をするが、スクロールが予定の部分まで達した時に生成したい\n        const elemOfIntresect = document.getElementsByTagName('section');\n        for (let i = 0; i < elemOfIntresect.length; i++) {\n          observer.observe(elemOfIntresect[i]);\n        }\n        resolve();\n      })\n      .catch(e => {\n        console.log(e);\n        const main = document.getElementById('main');\n        main.insertAdjacentHTML(\n          'afterbegin',\n          '<p>データの取得に失敗しました。リロードをしてください</p>'\n        );\n        reject('要素の取得生成に失敗しました。');\n      });",
         },
