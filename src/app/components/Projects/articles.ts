@@ -131,7 +131,7 @@ export const projectArticles: articleItem[] = [
     description: "業務において様々な経験をさせていただいたWEBサイト。各ページごとに開発環境をもつことで、CSSやJSの影響範囲を限定させながら構築した部分が多いです。大型選挙の特設サイトや、各選挙の一部ページなど、管轄外のページがありつつも、全体的に管理運用を行ってきました。",
     image: "http://www.nhk.or.jp/senkyo/images/ogimage.png",
     overview: {
-      text: "制作中",
+      text: "NHK全体における「選挙情報をまとめて掲載するWEBサイト」としてこちらのページが存在してます。日本中の選挙の予定、NHKが注目している選挙のコンテンツ掲載、選挙の知識やアンケート情報などのページ作成、大型選挙の議席獲得状況や、立候補者の情報を発信するための特設サイトの運用などがメイン業務でした。とにかく情報を性格に掲載することが求められました。",
       tags: ["Webpack", "JavaScript", "jQuery", "React", "HTML", "EJS", "CSS", "SCSS", "Tailwind"],
       period: "2021.02 - 2025.02",
       role: "コーディング",
@@ -141,7 +141,19 @@ export const projectArticles: articleItem[] = [
         pageUrl: "https://www.nhk.or.jp/senkyo/"
       }
     },
-    highlights: undefined,
+    highlights:
+      [
+        {
+          heading: "WEBサイト全体の更新業務",
+          icon: "",
+          summary: "こちらのアンケートは全自治体の長におこなっていることもあり、非常に膨大なページが存在しています。それを自治体名から検索できるようにしました。とくに、複数検索にも対応できるようにしました。一般的にgoogle検索ではスペースで検索キーワードを複数設置すると思います。こちらのページでも複数ワードでの検索ができるように、入力値からあらゆるケースを考え、不要な情報を除去し、必要な状態にするように努めました。",
+          tasks: ["入力値をパラメーターでGETメソッドでの受け渡し", "パラメーターの、全半角スペースなどの処理"],
+          link: "",
+          image: "",
+          code: "const getParameterChars = (parameters) => {\n  // 検索ワードを抽出する\n  return extractWords(decodeURI(parameters));\n}\n/**\n * 検索ワードを抽出する\n * @param {string} parameters - デコードされた文字列「?sw=」以降\n * @returns {Array} - 1つでも配列で戻す\n */\nfunction extractWords(parameters) {\n  // 全角スペースをすべて半角スペースに変換。\n  const replacedSpaceParam = parameters.replace(/　+|\\++/g, \" \")\n  // 今回inputは1つなのは確定なので、「?」も一緒に除去。\n  const removedKeywordParam = replacedSpaceParam.replace(/\\?[a-z]{2}\\=/g, \"\")\n  // 文字列の先頭の半角スペースがあれば除去\n  const removedFstSpaceParam = removedKeywordParam.replace(/^ */g, \"\");\n  // 文字列の先頭の半角スペースがあれば除去\n  const removedFstPlusParam = removedFstSpaceParam.replace(/^\\+*/g, \"\");\n  // 文字列の最後に半角スペースがあれば除去\n  const removedLstSpaceParam = removedFstPlusParam.replace(/ *$/g, \"\");\n  // 文字列の最後に半角スペースがあれば除去\n  const removedLstPlusParam = removedLstSpaceParam.replace(/\\+*$/, \"\");\n  // 分解したものと、文字列としてinputタグに入力するものをreturn\n  return {\n    inputChars: removedLstPlusParam,\n    inputData: removedLstPlusParam.split(\" \")\n  }\n}\nexport { getParameterChars };",
+        },
+      ]
+    ,
   },
   {
     id: "5",
