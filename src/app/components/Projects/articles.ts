@@ -131,9 +131,9 @@ export const projectArticles: articleItem[] = [
     description: "業務において様々な経験をさせていただいたWEBサイト。各ページごとに開発環境をもつことで、CSSやJSの影響範囲を限定させながら構築した部分が多いです。大型選挙の特設サイトや、各選挙の一部ページなど、管轄外のページがありつつも、全体的に管理運用を行ってきました。",
     image: "http://www.nhk.or.jp/senkyo/images/ogimage.png",
     overview: {
-      text: "制作中",
-      tags: ["Webpack", "JavaScript", "jQuery", "React", "HTML", "EJS", "CSS", "SCSS", "Tailwind"],
-      period: "2021.02 - 2025.02",
+      text: "NHK全体における「選挙情報をまとめて掲載するWEBサイト」としてこちらのページが存在してます。日本中の選挙の予定、NHKが注目している選挙のコンテンツ掲載、選挙の知識やアンケート情報などのページ作成、大型選挙の議席獲得状況や、立候補者の情報を発信するための特設サイトの運用などがメイン業務でした。とにかく情報を正確に掲載することが求められました。",
+      tags: ["Webpack", "JavaScript", "jQuery", "React", "HTML", "EJS", "CSS", "SCSS"],
+      period: "2021.02 - 現在",
       role: "コーディング",
       team: "4名",
       links: {
@@ -141,7 +141,28 @@ export const projectArticles: articleItem[] = [
         pageUrl: "https://www.nhk.or.jp/senkyo/"
       }
     },
-    highlights: undefined,
+    highlights:
+      [
+        {
+          heading: "WEBサイトトップページの更新業務",
+          icon: "",
+          summary: "選挙WEBのトップページは、いくつかのセクションに分かれていますが、これを１つのxmlファイルに情報をまとめて動的にページを生成しています。",
+          tasks: ["xmlファイルをベースに必要なセクションの動的生成", "非同期処理によるsectionタグ作成、section内部のDOM構造の生成などの処理の整理", "クラスのインスタンスによる情報の管理"],
+          link: "https://www.nhk.or.jp/senkyo/",
+          image: "",
+          code: "const initDataProcess = new getDataProcess();\n\n    initDataProcess\n      .getDataPromise(INDEX_XML_PATH, 'xml') // xmlの取得\n      .then(() => {\n        // xmlデータをajax_dataに格納後、sectionタグ（HTML）を生成\n        return createSectionTag(initDataProcess.ajax_data);\n      })\n      .then(() => {\n        // sectionタグ（HTML）生成後、sectionの中身の生成\n        // createMainTagの中で、各セクション内部DOM生成を実施。すべて完了したらresolveを返す。\n        return createMainTag(initDataProcess.ajax_data);\n      })\n      .then(() => {\n        createSlideshow(); // スライド起動\n        // 予定の部分の生成をするが、スクロールが予定の部分まで達した時に生成したい\n        const elemOfIntresect = document.getElementsByTagName('section');\n        for (let i = 0; i < elemOfIntresect.length; i++) {\n          observer.observe(elemOfIntresect[i]);\n        }\n        resolve();\n      })\n      .catch(e => {\n        console.log(e);\n        const main = document.getElementById('main');\n        main.insertAdjacentHTML(\n          'afterbegin',\n          '<p>データの取得に失敗しました。リロードをしてください</p>'\n        );\n        reject('要素の取得生成に失敗しました。');\n      });",
+        },
+        {
+          heading: "各選挙の候補者アンケートの作成",
+          icon: "",
+          summary: "HTMLテンプレートとしてEJSを利用した開発環境を作成しました。これにより、静的HTMLファイルを安定して生成できるようになりました。利点は、あらかじめ設定しておいた生成ルールの基づいてページが常に作成されるため、Gitによる更新箇所の正確な把握ができるようになったこと。ページ作成の段階では、正確に情報をJSONデータに反映させることにフォーカスすればいいということ。フローを確定させることができるということだと感じています。また、修正にもスピーディに対応できるということも非常に強みだなと感じています。",
+          tasks: ["EJSを利用した制作と更新の効率化", "html構造とデータ部分を分割して管理できる"],
+          link: "https://www.nhk.or.jp/senkyo/database/local/nagoya/20909/questionnaire55309.html",
+          image: "",
+          code: "<div id=\"anc-candidate\" class=\"l-content__inner--max p-candidate\">\n  <div class=\"p-heading-icon\">\n    <p class=\"icon-img human\"></p>\n  </div>\n\n  <h2 class=\"p-heading-01\"><%= pageData.sectionTitles.candidate %></h2>\n\n  <% for( let i = 0; i < candidateData.candidateInfo.length; i++ ) { %>\n\n   <% if (i === 0) { %>\n   <div class=\"p-candidate__details <%= candidateData.candidateInfo[i].color %> u-mt32--md u-mt24--sm\">\n\n   <% } else { %>\n   <div class=\"p-candidate__details <%= candidateData.candidateInfo[i].color %>\">\n   <% } %>\n\n      <div class=\"details-header\">\n        <p class=\"photo\"><img src=\"./images/<%= candidateData.candidateInfo[i].img %>\" alt=\"\"></p>\n        <div class=\"text\">\n          <div class=\"name\">\n            <p class=\"name-01\"><%= candidateData.candidateInfo[i].furigana %></p>\n            <p class=\"name-02\"><%= candidateData.candidateInfo[i].name %></p>\n          </div>\n          <div class=\"age\"><%= candidateData.candidateInfo[i].candidateSecInfo.ageArea %></div>\n\n          <% if (candidateData.candidateInfo[i].candidateSecInfo.statusArea.length === 1) { %>\n          <div class=\"status\"><%= candidateData.candidateInfo[i].candidateSecInfo.statusArea %></div>\n\n          <% } else { %>\n          <div class=\"status\"><%= candidateData.candidateInfo[i].candidateSecInfo.statusArea[0] %><br /><%= candidateData.candidateInfo[i].candidateSecInfo.statusArea[1] %></div>\n          <% } %>\n        </div>\n      </div>\n      <dl class=\"q-and-a\">\n        <%# 候補者の横顔セクションの回答をすべてしていない場合の注釈 %>\n\n        <% if (candidateData.candidateInfo[i].candidateSecInfo.noAllAnswerAnnotation !== \"\") { %>\n        <p><%= candidateData.candidateInfo[i].candidateSecInfo.noAllAnswerAnnotation %></p>\n\n        <% } else { %>\n\n        <% for( let k = 0; k < candidateData.candidateInfo[i].candidateSecInfo.questions.length; k++ ) { %>\n        <dt class=\"question\"><%= candidateData.candidateInfo[i].candidateSecInfo.questions[k].question %></dt>\n        <dd class=\"answer\"><%= candidateData.candidateInfo[i].candidateSecInfo.questions[k].answer %></dd>\n        <% } %>\n\n        <% } %>\n      </dl>\n    </div>\n    <% } %>\n  </div>",
+        },
+      ]
+    ,
   },
   {
     id: "5",
